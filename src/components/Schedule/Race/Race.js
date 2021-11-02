@@ -13,8 +13,8 @@ export const Race = ({ raceData, showDelay }) => {
   );
 
   const variants = {
-    initial: { opacity: 0, x: "-100%" },
-    animate: { opacity: 1, x: "0", transition: { delay: showDelay } },
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { delay: showDelay } },
   };
 
   const isFinished = () =>
