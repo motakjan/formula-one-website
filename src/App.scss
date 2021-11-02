@@ -12,16 +12,23 @@
     url(fonts/Formula1-Regular.ttf) format("truetype");
 }
 
-.title {
-  font-family: FormulaBlack;
-  font-size: 3.5em;
-  margin-bottom: 0;
-}
+.main-title-wrapper {
+  border-top: 6px solid black;
+  border-left: 6px solid black;
+  padding-left: 2rem;
+  border-radius: 0.5rem;
 
-.subtitle {
-  font-family: FormulaRegular;
-  font-size: 1em;
-  margin-bottom: 2rem;
+  .title {
+    font-family: FormulaBlack;
+    font-size: 4.5em;
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    font-family: FormulaRegular;
+    font-size: 1em;
+    margin-bottom: 2rem;
+  }
 }
 
 body {
