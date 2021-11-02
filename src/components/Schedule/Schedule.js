@@ -5,9 +5,7 @@ import { Race } from "./Race/Race";
 import "./Schedule.scss";
 
 export const Schedule = () => {
-  const { data, status } = useQuery("seasonData", getCurrentSeason, {
-    enabled: false,
-  });
+  const { data, status } = useQuery("seasonData", getCurrentSeason);
 
   return (
     <div className="schedule">

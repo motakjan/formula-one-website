@@ -18,7 +18,8 @@ export const PlacementInfo = ({ info, place }) => {
   return (
     <span className="placement-driver">
       <span>
-        {`${place}. ${info.Driver.givenName} ${info.Driver.familyName} `}
+        {`${place}. ${info.Driver.givenName} `}
+        <strong>{info.Driver.familyName.toUpperCase()} </strong>
         <i className="placement-team">({info.Constructor.name})</i>
       </span>
 

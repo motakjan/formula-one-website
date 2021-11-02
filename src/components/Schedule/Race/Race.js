@@ -7,12 +7,8 @@ import { PlacementInfo } from "./PlacementInfo/PlacementInfo";
 const { Meta } = Card;
 
 export const Race = ({ raceData }) => {
-  const { data } = useQuery(
-    ["roundResults", raceData.round],
-    () => getRoundResults(raceData.round),
-    {
-      enabled: false,
-    }
+  const { data } = useQuery(["roundResults", raceData.round], () =>
+    getRoundResults(raceData.round)
   );
 
   const isFinished = () =>

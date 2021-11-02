@@ -16,7 +16,7 @@ export const SVGIcon = () => {
     visible: {
       opacity: 1,
       pathLength: 1,
-      transition: { duration: 1.5, ease: "easeInOut" },
+      transition: { duration: 1.5, ease: "easeInOut", delay: 0.5 },
     },
   };
 
