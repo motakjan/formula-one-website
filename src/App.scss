@@ -6,8 +6,22 @@
   src: local("Formula1-Black"), url(fonts/Formula1-Black.ttf) format("truetype");
 }
 
-h1 {
+@font-face {
+  font-family: "FormulaRegular";
+  src: local("Formula1-Black"),
+    url(fonts/Formula1-Regular.ttf) format("truetype");
+}
+
+.title {
   font-family: FormulaBlack;
+  font-size: 3.5em;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-family: FormulaRegular;
+  font-size: 1em;
+  margin-bottom: 2rem;
 }
 
 body {

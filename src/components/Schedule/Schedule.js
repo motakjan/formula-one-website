@@ -9,10 +9,14 @@ export const Schedule = () => {
 
   return (
     <div className="schedule">
-      <h1>
+      <h1 className="title">
         F1 Schedule{" "}
         {status === "success" && data["MRData"]["RaceTable"]["season"]}
       </h1>
+      <h2 className="subtitle">
+        {status === "success" && data["MRData"]["RaceTable"]["season"]} FIA
+        FORMULA ONE WORLD CHAMPIONSHIP™ RACE CALENDAR
+      </h2>
       <div className="races">
         {status === "success" &&
           data["MRData"]["RaceTable"]["Races"].map((race, index) => (
