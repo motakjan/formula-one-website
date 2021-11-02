@@ -12,9 +12,17 @@
     url(fonts/Formula1-Regular.ttf) format("truetype");
 }
 
+a {
+  color: #e10600;
+
+  &:hover {
+    color: #111111;
+  }
+}
+
 .main-title-wrapper {
-  border-top: 6px solid black;
-  border-left: 6px solid black;
+  border-top: 6px solid #111111;
+  border-left: 6px solid #111111;
   padding-left: 2rem;
   border-radius: 0.5rem;
 

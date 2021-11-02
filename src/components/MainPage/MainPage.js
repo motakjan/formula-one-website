@@ -1,5 +1,6 @@
 import React from "react";
 import "./MainPage.scss";
+import { News } from "./News/News";
 
 export const MainPage = () => {
   return (
@@ -12,8 +13,8 @@ export const MainPage = () => {
           </h2>
         </div>
       </div>
-      <div className="block mainBodyWhite">white</div>
-      <div className="block mainBodyWhite">white</div>
+      <div className="block mainBodyDark">black</div>
+      <News />
     </div>
   );
 };

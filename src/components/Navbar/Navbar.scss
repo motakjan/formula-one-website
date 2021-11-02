@@ -8,7 +8,7 @@ $medium: 750px;
   padding: 16px 12px 14px 12px;
   align-items: center;
   background: #e10600;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #ededed;
   //-webkit-box-shadow: 8px 0px 15px 3px rgb(0 0 0 / 12%);
   //box-shadow: 8px 0px 15px 3px rgb(0 0 0 / 12%);
 
@@ -120,7 +120,7 @@ $medium: 750px;
     .link {
       text-decoration: none;
       margin: 0px 16px;
-      color: white;
+      color: #ededed;
       font-weight: 400;
       font-size: 1.2rem;
       display: flex;
@@ -161,8 +161,8 @@ $medium: 750px;
       align-items: center;
 
       .link {
-        border-bottom: 2px solid white;
-        border-right: 2px solid white;
+        border-bottom: 2px solid #ededed;
+        border-right: 2px solid #ededed;
         border-radius: 8px;
         padding: 5px;
         width: 85vw;

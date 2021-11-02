@@ -10,7 +10,7 @@ import { MainPage } from "./components/MainPage/MainPage";
 function App() {
   const location = useLocation();
   return (
-    <AnimatePresence exitBeforeEnter initial={false}>
+    <AnimatePresence exitBeforeEnter>
       <div className="App">
         <Navbar />
         <Switch location={location} key={location.pathname}>
