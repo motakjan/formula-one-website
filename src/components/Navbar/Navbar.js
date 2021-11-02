@@ -20,20 +20,16 @@ export const Navbar = () => {
   const size = useWindowSize();
 
   const variants = {
-    open: { opacity: 1, y: 0 },
-    closed: { opacity: 0, y: "-100%" },
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: "-100%" },
   };
 
   const showLinks = () => {
-    var links = document.getElementById("nav-links");
-    links.style.display = !isOpen ? "flex" : "none";
     setIsOpen((prevState) => !prevState);
   };
 
   useEffect(() => {
     if (size.width > 750) {
-      var links = document.getElementById("nav-links");
-      links.style.display = "flex";
       setIsOpen(true);
     }
   }, [size]);
@@ -45,43 +41,45 @@ export const Navbar = () => {
         <HamburgerMenu showLinks={showLinks} isOpen={isOpen} />
       </div>
 
-      <motion.div
-        className="links"
-        id="nav-links"
-        animate={isOpen ? "open" : "closed"}
-        variants={variants}
-      >
-        <Link href="/home" className="link">
-          <HomeOutlined /> Home
-        </Link>
-        <Link href="/schedule" className="link">
-          <ScheduleOutlined /> Schedule
-        </Link>
-        <DropdownLink
-          href="/"
-          className="link"
-          dropdown={[
-            {
-              href: "/rankings/drivers",
-              className: "link",
-              name: "Drivers",
-              icon: <UserOutlined />,
-            },
-            {
-              href: "/rankings/constructors",
-              className: "link",
-              name: "Constructors",
-              icon: <CarOutlined />,
-            },
-          ]}
+      {isOpen && (
+        <motion.div
+          className="links"
+          id="nav-links"
+          animate={isOpen ? "open" : "closed"}
+          variants={variants}
         >
-          <OrderedListOutlined /> Rankings
-        </DropdownLink>
-        <Link href="/teams" className="link">
-          <TeamOutlined />
-          Teams
-        </Link>
-      </motion.div>
+          <Link href="/home" className="link" transitionDelay={0.2}>
+            <HomeOutlined /> Home
+          </Link>
+          <Link href="/schedule" className="link" transitionDelay={0.4}>
+            <ScheduleOutlined /> Schedule
+          </Link>
+          <DropdownLink
+            href="/"
+            className="link"
+            transitionDelay={0.6}
+            dropdown={[
+              {
+                href: "/rankings/drivers",
+                className: "link",
+                name: "Drivers",
+                icon: <UserOutlined />,
+              },
+              {
+                href: "/rankings/constructors",
+                className: "link",
+                name: "Constructors",
+                icon: <CarOutlined />,
+              },
+            ]}
+          >
+            <OrderedListOutlined /> Rankings
+          </DropdownLink>
+          <Link href="/teams" className="link" transitionDelay={0.8}>
+            <TeamOutlined /> Teams
+          </Link>
+        </motion.div>
+      )}
     </header>
   );
 };

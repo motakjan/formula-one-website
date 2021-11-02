@@ -1,14 +1,26 @@
 import React from "react";
 import { Menu, Dropdown } from "antd";
 import { DownOutlined } from "@ant-design/icons";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-export const DropdownLink = ({ children, className, dropdown }) => {
+export const DropdownLink = ({
+  children,
+  className,
+  dropdown,
+  transitionDelay,
+}) => {
+  const variants = {
+    initial: { opacity: 0, x: "-100%" },
+    animate: { opacity: 1, x: 0 },
+  };
+
   const generateDropdownItems = () => {
     return (
       <Menu>
         {dropdown.map((item) => (
           <Menu.Item key={`dropdown-item-${item.name}`}>
-            {item.icon} <a href={item.href}>{item.name}</a>
+            {item.icon} <Link to={item.href}>{item.name}</Link>
           </Menu.Item>
         ))}
       </Menu>
@@ -19,14 +31,18 @@ export const DropdownLink = ({ children, className, dropdown }) => {
 
   return (
     <Dropdown overlay={dropdownItems}>
-      <a
+      <motion.a
         href="/"
         className={`${className} dropdown-link`}
         onClick={(e) => e.preventDefault()}
+        animate="animate"
+        initial="initial"
+        transition={{ delay: transitionDelay }}
+        variants={variants}
       >
         {children}
         <DownOutlined />
-      </a>
+      </motion.a>
     </Dropdown>
   );
 };

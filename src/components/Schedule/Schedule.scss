@@ -1,0 +1,49 @@
+.schedule {
+  padding: 8rem 3rem 2rem 3rem;
+  .races {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+    justify-items: start;
+    align-items: center;
+
+    .race {
+      height: 100%;
+      width: 75%;
+      border: 2px solid black;
+      border-top: none;
+      border-right: none;
+      border-radius: 0.5rem;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 300px);
+      grid-column: span 2; /* Spans two columns */
+
+      .placement {
+        display: flex;
+        flex-direction: column;
+        .placement-driver {
+          margin-bottom: 10px;
+          background-color: rgb(236, 236, 236);
+          padding: 0px 8px;
+          border: 1px solid black;
+          border-radius: 4px;
+          font-weight: 500;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .placement-driver-image {
+            width: 3rem;
+            height: 1.5rem;
+            width: 7rem;
+            height: 7rem;
+          }
+        }
+        .placement-team {
+          font-size: 12px;
+          color: rgb(139, 139, 139);
+        }
+      }
+    }
+  }
+}

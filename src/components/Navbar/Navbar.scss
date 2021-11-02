@@ -1,6 +1,7 @@
 $medium: 750px;
 
 .navbar {
+  z-index: 1000;
   display: flex;
   position: fixed;
   width: 100vw;
@@ -8,8 +9,8 @@ $medium: 750px;
   align-items: center;
   background: #e10600;
   border-bottom: 2px solid white;
-  -webkit-box-shadow: 8px 0px 15px 3px rgb(0 0 0 / 12%);
-  box-shadow: 8px 0px 15px 3px rgb(0 0 0 / 12%);
+  //-webkit-box-shadow: 8px 0px 15px 3px rgb(0 0 0 / 12%);
+  //box-shadow: 8px 0px 15px 3px rgb(0 0 0 / 12%);
 
   .top-bar {
     display: flex;
@@ -155,7 +156,6 @@ $medium: 750px;
     }
 
     .links {
-      display: none;
       margin: 0.3rem 0 0 0;
       flex-direction: column;
       align-items: center;
