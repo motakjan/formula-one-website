@@ -1,0 +1,71 @@
+$medium: 750px;
+
+.main-page {
+  .mainBodyWhite {
+    background: white;
+  }
+
+  .mainImage {
+    background-image: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(0, 48, 255, 0) 50%
+      ),
+      url("https://images.hdqwalls.com/wallpapers/f1-cars-racing-digital-art-4k-2n.jpg");
+
+    min-height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+
+    .mainImageText {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 4rem;
+      padding: 1rem;
+
+      .mainImageTitle {
+        font-family: FormulaBlack;
+        margin-bottom: 0;
+        color: #111111;
+      }
+
+      .mainImageSubTitle {
+        font-family: FormulaRegular;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: $medium) {
+    .mainImageText {
+      padding: 2rem;
+
+      .mainImageTitle {
+        font-size: 3rem;
+      }
+
+      .mainImageSubTitle {
+        text-align: center;
+      }
+    }
+  }
+
+  @media screen and (min-width: $medium) {
+    .mainImageText {
+      .mainImageTitle {
+        font-size: 4rem;
+      }
+
+      .mainImageSubTitle {
+        text-align: left;
+      }
+    }
+  }
+}

@@ -44,27 +44,6 @@ body {
   height: 100vh;
 }
 
-.white {
-  background: white;
-}
-
-.salmon {
-  background-image: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(0, 48, 255, 0) 50%
-    ),
-    url("https://images.hdqwalls.com/wallpapers/f1-cars-racing-digital-art-4k-2n.jpg");
-
-  min-height: 500px;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .red {
   background: lightblue;
 }

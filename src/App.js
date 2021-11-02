@@ -2,34 +2,49 @@ import "./App.scss";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { Schedule } from "./components/Schedule/Schedule";
+import { AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
+import { PageTransitionWrapper } from "./components/UI/PageTransitionWrapper/PageTransitionWrapper";
+import { MainPage } from "./components/MainPage/MainPage";
 
 function App() {
+  const location = useLocation();
   return (
-    <div className="App">
-      <Navbar />
-      <Switch>
-        <Route path="/" exact>
-          <div className="block salmon">salmon</div>
-          <div className="block white">blue</div>
-          <div className="block red">red</div>
-        </Route>
-        <Route path="/schedule">
-          <Schedule />
-        </Route>
-        <Route path="/rankings/drivers">
-          <div className="block red">rankings/drivers</div>
-        </Route>
-        <Route path="/rankings/constructors">
-          <div className="block red">rankings/constructors</div>
-        </Route>
-        <Route path="/teams">
-          <div className="block red">Teams</div>
-        </Route>
-        <Route path="*">
-          <Redirect to="/" />
-        </Route>
-      </Switch>
-    </div>
+    <AnimatePresence exitBeforeEnter initial={false}>
+      <div className="App">
+        <Navbar />
+        <Switch location={location} key={location.pathname}>
+          <Route path="/" exact>
+            <PageTransitionWrapper>
+              <MainPage />
+            </PageTransitionWrapper>
+          </Route>
+          <Route path="/schedule">
+            <PageTransitionWrapper>
+              <Schedule />
+            </PageTransitionWrapper>
+          </Route>
+          <Route path="/rankings/drivers">
+            <PageTransitionWrapper>
+              <div className="block red">rankings/drivers</div>
+            </PageTransitionWrapper>
+          </Route>
+          <Route path="/rankings/constructors">
+            <PageTransitionWrapper>
+              <div className="block red">rankings/constructors</div>
+            </PageTransitionWrapper>
+          </Route>
+          <Route path="/teams">
+            <PageTransitionWrapper>
+              <div className="block red">Teams</div>
+            </PageTransitionWrapper>
+          </Route>
+          <Route path="*">
+            <Redirect to="/" />
+          </Route>
+        </Switch>
+      </div>
+    </AnimatePresence>
   );
 }
 
