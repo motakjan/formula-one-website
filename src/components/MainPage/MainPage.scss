@@ -1,9 +1,11 @@
 $medium: 750px;
 
 .main-page {
-  .news-section {
-    padding: 2rem;
+  .mainPagePadding {
+    padding: 4rem 12rem;
+  }
 
+  .news-section {
     .articles {
       margin-top: 1rem;
       justify-content: space-between;
@@ -18,6 +20,7 @@ $medium: 750px;
           img {
             max-width: 100%;
             max-height: 100%;
+            min-width: 100%;
           }
         }
         margin: 0.2rem;
@@ -30,17 +33,19 @@ $medium: 750px;
   }
 
   .mainBodyDark {
-    background: #111111;
+    background: url("https://c.wallhere.com/photos/8c/53/1920x1080_px_car_Formula_1-627387.jpg!d");
+    box-shadow: inset 0 0 0 1000px rgba(17, 17, 17, 0.95);
     color: white;
   }
 
   .mainImage {
     background-image: linear-gradient(
         0deg,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(0, 48, 255, 0) 50%
+        rgba(17, 17, 17, 1) 0%,
+        rgba(17, 17, 17, 1) 20%,
+        rgba(0, 48, 255, 0) 70%
       ),
-      url("https://images.hdqwalls.com/wallpapers/f1-cars-racing-digital-art-4k-2n.jpg");
+      url("https://www.formula1.com/content/dam/fom-website/sutton/2020/Austria/Saturday/1254270138.jpg");
 
     min-height: 500px;
 
@@ -49,7 +54,6 @@ $medium: 750px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 60vh;
 
     .mainImageText {
       display: flex;
@@ -62,14 +66,25 @@ $medium: 750px;
       .mainImageTitle {
         font-family: FormulaBlack;
         margin-bottom: 0;
-        color: #111111;
+        color: white;
+        /* border: 2px solid rgb(255,0,0,0.5); */
+        background: rgb(255, 0, 0, 0.5);
+        padding: 1.5rem 4rem;
+        border-radius: 0.5rem;
       }
 
       .mainImageSubTitle {
         font-family: FormulaRegular;
         margin-bottom: 2rem;
+        color: white;
       }
     }
+  }
+
+  .mid-section-page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   @media screen and (max-width: $medium) {
@@ -89,6 +104,24 @@ $medium: 750px;
       .article {
         width: 100%;
       }
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .title {
+      font-size: 3.3em;
+    }
+
+    .subtitle {
+      font-size: 1.5em;
+    }
+    .articles {
+      .article {
+        width: 100%;
+      }
+    }
+    .mainPagePadding {
+      padding: 4rem;
     }
   }
 

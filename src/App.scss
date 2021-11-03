@@ -13,16 +13,39 @@
 }
 
 a {
-  color: #e10600;
+  color: #ff1b16;
 
   &:hover {
     color: #111111;
   }
 }
 
-.main-title-wrapper {
+.whiteText {
+  color: #ededed;
+  border-color: #ededed;
+}
+
+.main-title-wrapper-undefined {
   border-top: 6px solid #111111;
   border-left: 6px solid #111111;
+  padding-left: 2rem;
+  border-radius: 0.5rem;
+
+  .title {
+    font-family: FormulaBlack;
+    font-size: 4.5em;
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    font-family: FormulaRegular;
+    margin-bottom: 2rem;
+  }
+}
+
+.main-title-wrapper-whiteText {
+  border-top: 6px solid #ededed;
+  border-left: 6px solid #ededed;
   padding-left: 2rem;
   border-radius: 0.5rem;
 
