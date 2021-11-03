@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "antd";
 import { motion } from "framer-motion";
+import { Image } from "antd";
 
 const { Meta } = Card;
 
@@ -10,12 +11,16 @@ export const Article = ({ articleData }) => {
       className="article"
       cover={
         <div className="imgWrapper">
-          <motion.img
-            className="article-image"
-            alt="example"
-            src={articleData.urlToImage}
-            whileHover={{ scale: 1.2, transition: { duration: 0.6 } }}
-          />
+          <motion.div
+            className="img"
+            whileHover={{ scale: 1.1, transition: { duration: 0.4 } }}
+          >
+            <Image
+              className="article-image"
+              alt="example"
+              src={articleData.urlToImage}
+            />
+          </motion.div>
         </div>
       }
     >
