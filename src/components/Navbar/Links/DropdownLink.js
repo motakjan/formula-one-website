@@ -18,8 +18,8 @@ export const DropdownLink = ({
   const generateDropdownItems = () => {
     return (
       <Menu>
-        {dropdown.map((item) => (
-          <Menu.Item key={`dropdown-item-${item.name}`}>
+        {dropdown.map((item, index) => (
+          <Menu.Item key={`dropdown-item-${item.name}-${index}`}>
             {item.icon} <Link to={item.href}>{item.name}</Link>
           </Menu.Item>
         ))}

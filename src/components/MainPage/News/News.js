@@ -10,7 +10,7 @@ export const News = ({ className }) => {
     <div className={`news-section ${className}`}>
       <Title title="News" subtitle="NEWS FROM THE RACING WORLD" />
       <div className="articles">
-        {data &&
+        {status === "success" &&
           data.articles
             .slice(0, 9)
             .map((article, index) => (
