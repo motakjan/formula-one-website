@@ -1,7 +1,7 @@
-$medium: 750px;
+@import "../../Variables";
 
 .main-page {
-  .mainPagePadding {
+  .main-page-padding {
     padding: 4rem 12rem;
   }
 
@@ -28,14 +28,11 @@ $medium: 750px;
     }
   }
 
-  .mainBodyWhite {
-    background: white;
-  }
-
-  .mainBodyDark {
-    background: url("https://c.wallhere.com/photos/8c/53/1920x1080_px_car_Formula_1-627387.jpg!d");
-    box-shadow: inset 0 0 0 1000px rgba(17, 17, 17, 0.95);
-    color: white;
+  .main-body-dark {
+    background-color: $darkColor;
+    color: $lightColor;
+    width: 100%;
+    justify-content: center;
   }
 
   .mainImage {
@@ -66,7 +63,7 @@ $medium: 750px;
       .mainImageTitle {
         font-family: FormulaBlack;
         margin-bottom: 0;
-        color: white;
+        color: $lightColor;
         /* border: 2px solid rgb(255,0,0,0.5); */
         background: rgb(255, 0, 0, 0.5);
         padding: 1.5rem 4rem;
@@ -76,7 +73,7 @@ $medium: 750px;
       .mainImageSubTitle {
         font-family: FormulaRegular;
         margin-bottom: 2rem;
-        color: white;
+        color: $lightColor;
       }
     }
   }
@@ -105,13 +102,16 @@ $medium: 750px;
         width: 100%;
       }
     }
+
+    .main-body-dark {
+      font-size: 0.5rem;
+    }
   }
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: $large) {
     .title {
       font-size: 3.3em;
     }
-
     .subtitle {
       font-size: 1.5em;
     }
@@ -120,7 +120,7 @@ $medium: 750px;
         width: 100%;
       }
     }
-    .mainPagePadding {
+    .main-page-padding {
       padding: 4rem;
     }
   }
@@ -135,10 +135,15 @@ $medium: 750px;
         text-align: left;
       }
     }
+
     .articles {
       .article {
         width: 32%;
       }
+    }
+
+    .main-body-dark {
+      height: 100vh;
     }
   }
 }

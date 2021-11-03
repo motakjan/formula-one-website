@@ -6,9 +6,9 @@ import { News } from "./News/News";
 export const MainPage = () => {
   return (
     <div className="main-page">
-      <div className="block mainImage mainPagePadding"></div>
+      <div className="block mainImage main-page-padding"></div>
       <MidSection />
-      <News className="mainPagePadding" />
+      <News className="main-page-padding" />
     </div>
   );
 };

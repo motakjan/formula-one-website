@@ -3,12 +3,12 @@ import { Title } from "../../UI/Title/Title";
 
 export const MidSection = () => {
   return (
-    <div className="block mainBodyDark whiteText mainPagePadding mid-section-page">
+    <div className="main-body-dark white-text main-page-padding mid-section-page">
       <div className="text-wrapper">
         <Title
           title="Standings"
-          subtitle="CURRENT STANSIND FOR SEASON 2021"
-          className="whiteText"
+          subtitle="CURRENT STANDINGS FOR SEASON 2021"
+          light
         />
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit ut iusto
         deleniti at in. Totam, nostrum quae! Officiis aspernatur voluptates

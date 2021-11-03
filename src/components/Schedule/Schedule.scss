@@ -1,3 +1,5 @@
+@import "../../Variables";
+
 .schedule {
   padding: 8rem 3rem 2rem 3rem;
   .races {
@@ -10,7 +12,7 @@
     .race {
       height: 100%;
       width: 75%;
-      border: 4px solid #111111;
+      border: 4px solid $darkColor;
       border-top: none;
       border-right: none;
       border-radius: 0.5rem;
@@ -29,7 +31,7 @@
           margin-bottom: 10px;
           background-color: rgb(236, 236, 236);
           padding: 0px 8px;
-          border: 1px solid #111111;
+          border: 1px solid $darkColor;
           border-radius: 4px;
           font-weight: 500;
           display: flex;
@@ -45,7 +47,7 @@
         }
         .placement-team {
           font-size: 12px;
-          color: rgb(139, 139, 139);
+          color: rgb(180, 180, 180);
         }
       }
     }

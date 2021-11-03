@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "antd/dist/antd.css";
+@import "Variables";
 
 @font-face {
   font-family: "FormulaBlack";
@@ -12,69 +13,49 @@
     url(fonts/Formula1-Regular.ttf) format("truetype");
 }
 
-a {
-  color: #ff1b16;
-
-  &:hover {
-    color: #111111;
-  }
-}
-
-.whiteText {
-  color: #ededed;
-  border-color: #ededed;
-}
-
-.main-title-wrapper-undefined {
-  border-top: 6px solid #111111;
-  border-left: 6px solid #111111;
-  padding-left: 2rem;
-  border-radius: 0.5rem;
-
-  .title {
-    font-family: FormulaBlack;
-    font-size: 4.5em;
-    margin-bottom: 0;
-  }
-
-  .subtitle {
-    font-family: FormulaRegular;
-    margin-bottom: 2rem;
-  }
-}
-
-.main-title-wrapper-whiteText {
-  border-top: 6px solid #ededed;
-  border-left: 6px solid #ededed;
-  padding-left: 2rem;
-  border-radius: 0.5rem;
-
-  .title {
-    font-family: FormulaBlack;
-    font-size: 4.5em;
-    margin-bottom: 0;
-  }
-
-  .subtitle {
-    font-family: FormulaRegular;
-    margin-bottom: 2rem;
-  }
-}
-
 body {
   font-family: FormulaRegular;
   margin: 0;
   box-sizing: border-box;
 }
 
+a {
+  color: $redColor;
+
+  &:hover {
+    color: $darkColor;
+  }
+}
+
+.white-text {
+  color: $lightColor;
+  border-color: $lightColor;
+}
+
+.main-title-wrapper {
+  border-top: 6px solid;
+  border-left: 6px solid;
+  padding-left: 2rem;
+  border-radius: 0.5rem;
+
+  .title {
+    font-family: FormulaBlack;
+    font-size: 4.5em;
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    font-family: FormulaRegular;
+    margin-bottom: 2rem;
+  }
+}
+
 .block {
   width: 100%;
-  display: flex;
   justify-content: center;
-  align-items: center;
   height: 100vh;
 }
 
 .red {
-  background: lightblue;
+  background: $redColor;
 }
