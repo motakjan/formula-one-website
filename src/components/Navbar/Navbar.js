@@ -7,7 +7,6 @@ import { useWindowSize } from "../../hooks/useWindowsSize";
 import { motion } from "framer-motion";
 import { SVGIcon } from "./Icon/SVGIcon";
 import {
-  TeamOutlined,
   HomeOutlined,
   ScheduleOutlined,
   OrderedListOutlined,
@@ -75,9 +74,6 @@ export const Navbar = () => {
           >
             <OrderedListOutlined /> Rankings
           </DropdownLink>
-          <Link href="/teams" className="link" transitionDelay={0.8}>
-            <TeamOutlined /> Teams
-          </Link>
         </motion.div>
       )}
     </header>

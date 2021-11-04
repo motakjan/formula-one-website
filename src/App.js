@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 import { PageTransitionWrapper } from "./components/UI/PageTransitionWrapper/PageTransitionWrapper";
 import { MainPage } from "./components/MainPage/MainPage";
 import { Footer } from "./components/Footer/Footer";
+import { Teams } from "./components/Teams/Teams";
 
 function App() {
   const location = useLocation();
@@ -31,12 +32,7 @@ function App() {
         </Route>
         <Route path="/rankings/constructors">
           <PageTransitionWrapper>
-            <div className="block red">rankings/constructors</div>
-          </PageTransitionWrapper>
-        </Route>
-        <Route path="/teams">
-          <PageTransitionWrapper>
-            <div className="block red">Teams</div>
+            <Teams />
           </PageTransitionWrapper>
         </Route>
         <Route path="*">

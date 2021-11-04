@@ -1,0 +1,32 @@
+@import "../../Variables";
+
+.teams-page {
+  padding: 8rem 3rem 2rem 3rem;
+  background-color: $redColor;
+  height: 100%;
+
+  .team-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    border-radius: 1rem;
+    .card-top {
+      display: flex;
+      align-items: center;
+
+      h1 {
+        margin: 0;
+      }
+      img {
+        display: block;
+        width: 3.5rem;
+        height: auto;
+      }
+    }
+    img {
+      width: 35%;
+    }
+  }
+}

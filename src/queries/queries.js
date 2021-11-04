@@ -19,3 +19,11 @@ export const getNews = async () => {
   const data = await response.json();
   return data;
 };
+
+export const getCurrentTeams = async () => {
+  const response = await fetch(
+    `http://ergast.com/api/f1/current/constructorStandings.json`
+  );
+  const data = await response.json();
+  return data;
+};
