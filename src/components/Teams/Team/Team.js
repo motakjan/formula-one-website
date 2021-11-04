@@ -11,18 +11,23 @@ export const Team = ({ teamData }) => {
 
   return (
     <div className="team-card">
-      <div className="card-top">
+      <div className="wrapper">
+        <div className="card-top">
+          <img
+            src={`https://www.formula1.com/content/dam/fom-website/teams/2021/${correctName()}-logo.png.transform/2col/image.png`}
+            alt={`logo-${correctName()}`}
+          />
+          <h1 className="team-name">{teamData.Constructor.name}</h1>
+          <h1 className="position">{teamData.position}</h1>
+        </div>
         <img
-          src={`https://www.formula1.com/content/dam/fom-website/teams/2021/${correctName()}-logo.png.transform/2col/image.png`}
-          alt={`logo-${correctName()}`}
+          src={`https://www.formula1.com/content/dam/fom-website/teams/2021/${correctName()}.png.transform/6col/image.png`}
+          alt={`formula-${correctName()}`}
         />
-        <h1>{teamData.Constructor.name}</h1>
+        <h2 className="points">Points: {teamData.points}</h2>
+        <h2 className="wins">Wins: {teamData.wins}</h2>
+        <a href={teamData.Constructor.url}>Read More</a>
       </div>
-      <img
-        src={`https://www.formula1.com/content/dam/fom-website/teams/2021/${correctName()}.png.transform/6col/image.png`}
-        alt={`formula-${correctName()}`}
-      />
-      <a href={teamData.Constructor.url}>Read More</a>
     </div>
   );
 };

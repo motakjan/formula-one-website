@@ -5,28 +5,59 @@
   background-color: $redColor;
   height: 100%;
 
-  .team-card {
-    background-color: white;
+  .team-cards {
     display: flex;
-    flex-direction: column;
-    padding: 1rem 2rem;
-    margin: 1rem 0;
-    border-radius: 1rem;
-    .card-top {
+    flex-wrap: wrap;
+    .team-card {
+      background-color: white;
+      padding: 1rem 2rem;
+      margin: 1rem 1%;
+      border-radius: 1rem;
       display: flex;
-      align-items: center;
+      flex-direction: column;
 
-      h1 {
-        margin: 0;
-      }
-      img {
-        display: block;
-        width: 3.5rem;
-        height: auto;
+      .wrapper {
+        border-radius: 0.5rem;
+        border-top: 6px solid $darkColor;
+        border-left: 6px solid $darkColor;
+        padding: 1.5rem;
+        .card-top {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .team-name {
+            margin: 0;
+          }
+          img {
+            display: block;
+            width: 3.5rem;
+            height: auto;
+          }
+        }
+        img {
+          width: 95%;
+        }
+
+        .position {
+          font-size: 3rem;
+          font-family: FormulaBlack;
+          margin-left: auto;
+          margin-bottom: 0;
+        }
       }
     }
-    img {
-      width: 35%;
+  }
+
+  @media screen and (max-width: $large) {
+    .team-card {
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: $large) {
+    .team-card {
+      width: 48%;
     }
   }
 }

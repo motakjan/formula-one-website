@@ -12,11 +12,19 @@ export const Teams = () => {
 
   return (
     <div className="teams-page block">
-      <Title title="Teams" light />
-      {status === "success" &&
-        data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings.map(
-          (team) => <Team key={team.constructorId} teamData={team} />
-        )}
+      <Title
+        title="Constructors Standings"
+        subtitle="CURRENT CONSTRUCTORS STANDINGS FOR SEASON 2021"
+        light
+      />
+      <div className="team-cards">
+        {status === "success" &&
+          data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings.map(
+            (team, index) => (
+              <Team key={`constructor-key-${index}`} teamData={team} />
+            )
+          )}
+      </div>
     </div>
   );
 };
