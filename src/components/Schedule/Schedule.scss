@@ -12,7 +12,7 @@
     .race {
       height: 100%;
       width: 90%;
-      border: 4px solid $darkColor;
+      border: 4px solid $deepBlueColor;
       border-top: none;
       border-right: none;
       border-radius: 0.5rem;
@@ -26,10 +26,10 @@
           display: flex;
           justify-content: space-between;
           margin-bottom: 1rem;
-          border-bottom: 3px solid $lightColor;
+          border-bottom: 1px solid $lightColor;
           .race-time {
             margin-top: revert;
-            background-color: #15151e;
+            background-color: $deepBlueColor;
             color: $lightColor;
             border-radius: 0.5rem;
             padding: 0.4rem;
@@ -47,7 +47,8 @@
         flex-direction: column;
         .placement-driver {
           margin-bottom: 10px;
-          background-color: rgb(236, 236, 236);
+          color: white;
+          background-color: $deepBlueColor;
           padding: 0px 8px;
           border: 1px solid $darkColor;
           border-radius: 4px;

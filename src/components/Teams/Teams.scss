@@ -2,7 +2,7 @@
 
 .teams-page {
   padding: 8rem 3rem 2rem 3rem;
-  background-color: $redColor;
+  background-color: white;
   height: 100%;
 
   .team-cards {
@@ -10,29 +10,61 @@
     flex-wrap: wrap;
     .team-card {
       background-color: white;
-      padding: 1rem 2rem;
+      padding: 0.5rem 1rem;
       margin: 1rem 1%;
-      border-radius: 1rem;
+      border-radius: 0.5rem;
       display: flex;
       flex-direction: column;
+      border-bottom: 6px solid black;
+      border-left: 6px solid black;
 
       .wrapper {
-        border-radius: 0.5rem;
-        border-top: 6px solid $darkColor;
-        border-left: 6px solid $darkColor;
-        padding: 1.5rem;
+        padding: 0.2rem;
         .card-top {
           display: flex;
+          flex-direction: column;
           align-items: center;
           gap: 10px;
+
+          .place-position {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            .points-badge {
+              background-color: $darkColor;
+              color: $lightColor;
+              padding: 0.2rem;
+              border-radius: 0.4rem;
+              font-size: 0.9rem;
+            }
+
+            h2 {
+              font-size: 1.15rem;
+              text-align: center;
+            }
+          }
+
+          .logo-name {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            h1 {
+              font-family: FormulaBold;
+            }
+          }
 
           .team-name {
             margin: 0;
           }
           img {
             display: block;
-            width: 3.5rem;
+            width: 3rem;
             height: auto;
+            margin: 5px 0;
           }
         }
         img {
@@ -42,16 +74,37 @@
         .position {
           font-size: 3rem;
           font-family: FormulaBlack;
-          margin-left: auto;
           margin-bottom: 0;
+        }
+
+        .image-wrapper {
+          text-align: center;
+          background-image: url(https://www.formula1.com/etc/designs/fom-website/images/patterns/plus-x1.png);
+          background-size: 12px;
+          background-repeat: repeat;
+          background-size: 8px;
+          border-radius: 10px;
+          overflow: hidden;
+          background-position-x: -1px;
+          margin-bottom: 0.3rem;
         }
       }
     }
   }
 
   @media screen and (max-width: $large) {
+    padding: 8rem 0.5rem 2rem 0.5rem;
+  }
+
+  @media screen and (max-width: $medium) {
     .team-card {
       width: 100%;
+    }
+
+    .main-title-wrapper {
+      .title {
+        font-size: 2.1rem;
+      }
     }
   }
 

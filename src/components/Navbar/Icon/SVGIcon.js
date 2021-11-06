@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export const SVGIcon = () => {
+export const SVGIcon = (props) => {
   const pathVariants = {
     hidden: { opacity: 0, pathLength: 0 },
     visible: {
@@ -21,7 +21,7 @@ export const SVGIcon = () => {
   };
 
   return (
-    <motion.span className="logo" whileHover={{ scale: 1.1 }}>
+    <motion.span className="logo" whileHover={{ scale: 1.1 }} {...props}>
       <svg
         clipRule="evenodd"
         fillRule="evenodd"

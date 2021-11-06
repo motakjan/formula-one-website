@@ -13,6 +13,16 @@
     url(fonts/Formula1-Regular.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "FormulaBold";
+  src: local("Formula1-Bold"), url(fonts/Formula1-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "FormulaWide";
+  src: local("Formula1-Wide"), url(fonts/Formula1-Wide.ttf) format("truetype");
+}
+
 body {
   font-family: FormulaRegular;
   margin: 0;

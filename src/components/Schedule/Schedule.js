@@ -8,8 +8,6 @@ import "./Schedule.scss";
 export const Schedule = () => {
   const { data, status } = useQuery("seasonData", getCurrentSeason);
 
-  console.log(data);
-
   return (
     <div className="schedule">
       <Title

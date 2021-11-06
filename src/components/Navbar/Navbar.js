@@ -13,10 +13,12 @@ import {
   CarOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import { useHistory } from "react-router-dom";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const size = useWindowSize();
+  const history = useHistory();
 
   const variants = {
     open: { opacity: 1, x: 0 },
@@ -25,6 +27,11 @@ export const Navbar = () => {
 
   const showLinks = () => {
     setIsOpen((prevState) => !prevState);
+  };
+
+  const routeChange = () => {
+    let path = `newPath`;
+    history.push(path);
   };
 
   useEffect(() => {
@@ -36,7 +43,7 @@ export const Navbar = () => {
   return (
     <header className="navbar">
       <div className="top-bar">
-        <SVGIcon />
+        <SVGIcon onClick={routeChange} />
         <HamburgerMenu showLinks={showLinks} isOpen={isOpen} />
       </div>
 

@@ -15,13 +15,16 @@ export const Teams = () => {
       <Title
         title="Constructors Standings"
         subtitle="CURRENT CONSTRUCTORS STANDINGS FOR SEASON 2021"
-        light
       />
       <div className="team-cards">
         {status === "success" &&
           data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings.map(
             (team, index) => (
-              <Team key={`constructor-key-${index}`} teamData={team} />
+              <Team
+                key={`constructor-key-${index}`}
+                teamData={team}
+                delay={index * 0.2}
+              />
             )
           )}
       </div>
