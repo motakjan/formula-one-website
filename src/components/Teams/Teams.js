@@ -4,11 +4,12 @@ import { useQuery } from "react-query";
 import { getCurrentTeams } from "../../queries/queries";
 import { Team } from "./Team/Team";
 import "./Teams.scss";
+import { getTeamColors } from "../../queries/staticData";
 
 export const Teams = () => {
   const { data, status } = useQuery("teams", getCurrentTeams);
 
-  console.log(data);
+  const teamColors = getTeamColors();
 
   return (
     <div className="teams-page block">
@@ -24,6 +25,7 @@ export const Teams = () => {
                 key={`constructor-key-${index}`}
                 teamData={team}
                 delay={index * 0.2}
+                color={teamColors[team.Constructor.name]}
               />
             )
           )}

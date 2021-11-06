@@ -11,13 +11,8 @@ export const Schedule = () => {
   return (
     <div className="schedule">
       <Title
-        title={`F1 Schedule ${
-          status === "success" && data["MRData"]["RaceTable"]["season"]
-        }`}
-        subtitle={`${
-          status === "success" && data["MRData"]["RaceTable"]["season"]
-        } FIA
-          FORMULA ONE WORLD CHAMPIONSHIP™ RACE CALENDAR`}
+        title={"F1 Schedule 2021"}
+        subtitle={"2021 FIA FORMULA ONE WORLD CHAMPIONSHIP™ RACE CALENDAR"}
       />
 
       <div className="races">

@@ -1,5 +1,5 @@
 export const getCurrentSeason = async () => {
-  const response = await fetch("http://ergast.com/api/f1/current.json");
+  const response = await fetch("http://ergast.com/api/f1/2021.json");
   const data = await response.json();
   return data;
 };
@@ -22,7 +22,7 @@ export const getNews = async () => {
 
 export const getCurrentTeams = async () => {
   const response = await fetch(
-    `http://ergast.com/api/f1/current/constructorStandings.json`
+    `http://ergast.com/api/f1/2021/constructorStandings.json`
   );
   const data = await response.json();
   return data;

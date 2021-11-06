@@ -52,6 +52,17 @@
             justify-content: space-between;
             width: 100%;
 
+            .color-name-wrapper {
+              display: flex;
+              align-items: center;
+
+              span {
+                height: 1.75rem;
+                margin-right: 0.5rem;
+                border: 1px solid #dedede;
+              }
+            }
+
             h1 {
               font-family: FormulaBold;
             }
@@ -93,7 +104,19 @@
   }
 
   @media screen and (max-width: $large) {
-    padding: 8rem 0.5rem 2rem 0.5rem;
+    padding: 8rem 1rem 2rem 1rem;
+  }
+
+  @media screen and (min-width: $large) {
+    .team-card {
+      width: 31%;
+    }
+  }
+
+  @media screen and (max-width: $large) {
+    .team-card {
+      width: 48%;
+    }
   }
 
   @media screen and (max-width: $medium) {
@@ -105,12 +128,6 @@
       .title {
         font-size: 2.1rem;
       }
-    }
-  }
-
-  @media screen and (min-width: $large) {
-    .team-card {
-      width: 48%;
     }
   }
 }

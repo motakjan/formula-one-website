@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export const Team = ({ teamData, delay }) => {
+export const Team = ({ teamData, delay, color }) => {
   const correctName = () => {
     if (teamData.Constructor.name === "Alfa Romeo") return "alfa-romeo-racing";
     if (teamData.Constructor.name === "Alpine F1 Team") return "alpine";
@@ -33,7 +33,13 @@ export const Team = ({ teamData, delay }) => {
             </h2>
           </div>
           <div className="logo-name">
-            <h1 className="team-name">{teamData.Constructor.name}</h1>
+            <div className="color-name-wrapper">
+              <span className="color-tile" style={{ background: color }}>
+                &nbsp;
+              </span>
+              <h1 className="team-name">{teamData.Constructor.name}</h1>
+            </div>
+
             <img
               src={`https://www.formula1.com/content/dam/fom-website/teams/2021/${correctName()}-logo.png.transform/2col/image.png`}
               alt={`logo-${correctName()}`}
@@ -46,7 +52,14 @@ export const Team = ({ teamData, delay }) => {
             alt={`formula-${correctName()}`}
           />
         </div>
-        <a href={teamData.Constructor.url}>Read More</a>
+
+        <a
+          href={teamData.Constructor.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read More
+        </a>
       </div>
     </motion.div>
   );
