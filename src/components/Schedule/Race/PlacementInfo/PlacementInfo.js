@@ -20,6 +20,7 @@ export const PlacementInfo = ({ info, place }) => {
       <span>
         {`${place}. ${info.Driver.givenName} `}
         <strong>{info.Driver.familyName.toUpperCase()} </strong>
+        <br />
         <i className="placement-team">({info.Constructor.name})</i>
       </span>
 

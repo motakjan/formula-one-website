@@ -12,6 +12,18 @@ export const Race = ({ raceData, showDelay }) => {
     getRoundResults(raceData.round)
   );
 
+  const correctLocation = () => {
+    if (raceData.Circuit.Location.country === "UK") {
+      return "Great%20Britain";
+    }
+
+    if (raceData.Circuit.Location.country === "UAE") {
+      return "Abu%20Dhab";
+    }
+
+    return raceData.Circuit.Location.country;
+  };
+
   const variants = {
     initial: { opacity: 0 },
     animate: { opacity: 1, transition: { delay: showDelay } },
@@ -28,13 +40,26 @@ export const Race = ({ raceData, showDelay }) => {
       animate="animate"
     >
       <Card className="race-card">
-        <Meta
-          title={raceData.raceName}
-          description={raceData.Circuit.circuitName}
-        />
-        <p>
-          {raceData.date} : {raceData.time}
-        </p>
+        <div className="race-card-top">
+          <div>
+            <Meta
+              title={raceData.raceName}
+              description={raceData.Circuit.circuitName}
+            />
+            <p className="race-time">
+              {raceData.date} :{" "}
+              {raceData.time.substr(0, raceData.time.length - 1)}
+            </p>
+          </div>
+
+          <img
+            className="circuit-map"
+            alt={`circuit-${raceData.raceName}-map`}
+            src={`https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/${correctLocation()}%20carbon.png.transform/8col/image.png`}
+          />
+        </div>
+        <h3>Placements:</h3>
+
         {data && isFinished() && (
           <div className="placement">
             <PlacementInfo

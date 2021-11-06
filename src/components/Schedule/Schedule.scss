@@ -1,7 +1,7 @@
 @import "../../Variables";
 
 .schedule {
-  padding: 8rem 3rem 2rem 3rem;
+  padding: 8rem 1.5rem 2rem 1.5rem;
   .races {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -11,7 +11,7 @@
 
     .race {
       height: 100%;
-      width: 75%;
+      width: 90%;
       border: 4px solid $darkColor;
       border-top: none;
       border-right: none;
@@ -22,6 +22,24 @@
 
       .race-card {
         height: 100%;
+        .race-card-top {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 1rem;
+          border-bottom: 3px solid $lightColor;
+          .race-time {
+            margin-top: revert;
+            background-color: #15151e;
+            color: $lightColor;
+            border-radius: 0.5rem;
+            padding: 0.4rem;
+            width: fit-content;
+          }
+        }
+      }
+
+      .circuit-map {
+        width: 12rem;
       }
 
       .placement {
@@ -39,16 +57,35 @@
           align-items: center;
 
           .placement-driver-image {
-            width: 3rem;
-            height: 1.5rem;
-            width: 7rem;
-            height: 7rem;
+            width: 4rem;
+            height: 4rem;
           }
         }
         .placement-team {
           font-size: 12px;
           color: rgb(180, 180, 180);
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: $medium) {
+    .races {
+      .race {
+        width: 100%;
+      }
+    }
+    .main-title-wrapper {
+      .title {
+        font-size: 3em;
+      }
+    }
+  }
+
+  @media screen and (max-width: $small) {
+    .race-card {
+      .race-card-top {
+        flex-direction: column;
       }
     }
   }
