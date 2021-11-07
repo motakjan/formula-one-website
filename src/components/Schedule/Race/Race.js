@@ -4,11 +4,14 @@ import { useQuery } from "react-query";
 import { getRoundResults } from "../../../queries/queries";
 import { PlacementInfo } from "./PlacementInfo/PlacementInfo";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Spinner } from "../../UI/Spinner/Spinner";
+import { ErrorMessage } from "../../UI/ErrorMessage/ErrorMessage";
 
 const { Meta } = Card;
 
 export const Race = ({ raceData, showDelay }) => {
-  const { data } = useQuery(["roundResults", raceData.round], () =>
+  const { data, status } = useQuery(["roundResults", raceData.round], () =>
     getRoundResults(raceData.round)
   );
 
@@ -60,7 +63,7 @@ export const Race = ({ raceData, showDelay }) => {
         </div>
         <h3>Placements:</h3>
 
-        {data && isFinished() && (
+        {status === "success" && isFinished() && (
           <div className="placement">
             <PlacementInfo
               info={data.MRData.RaceTable.Races[0].Results[0]}
@@ -76,6 +79,13 @@ export const Race = ({ raceData, showDelay }) => {
             />
           </div>
         )}
+        {status === "loading" && <Spinner />}
+        {status === "error" && (
+          <ErrorMessage description="Error while loading placement data" />
+        )}
+        <Link to={{ pathname: `/results/${raceData.round}`, state: data }}>
+          Show More Info
+        </Link>
       </Card>
     </motion.span>
   );

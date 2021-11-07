@@ -1,6 +1,8 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { getCurrentSeason } from "../../queries/queries";
+import { ErrorMessage } from "../UI/ErrorMessage/ErrorMessage";
+import { Spinner } from "../UI/Spinner/Spinner";
 import { Title } from "../UI/Title/Title";
 import { Race } from "./Race/Race";
 import "./Schedule.scss";
@@ -14,7 +16,6 @@ export const Schedule = () => {
         title={"F1 Schedule 2021"}
         subtitle={"2021 FIA FORMULA ONE WORLD CHAMPIONSHIP™ RACE CALENDAR"}
       />
-
       <div className="races">
         {status === "success" &&
           data["MRData"]["RaceTable"]["Races"].map((race, index) => (
@@ -24,6 +25,10 @@ export const Schedule = () => {
               showDelay={0.1 * index}
             />
           ))}
+        {status === "loading" && <Spinner />}
+        {status === "error" && (
+          <ErrorMessage description="Error while loading schedule data" />
+        )}
       </div>
     </div>
   );

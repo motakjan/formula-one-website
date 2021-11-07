@@ -8,6 +8,7 @@ import { PageTransitionWrapper } from "./components/UI/PageTransitionWrapper/Pag
 import { MainPage } from "./components/MainPage/MainPage";
 import { Footer } from "./components/Footer/Footer";
 import { Teams } from "./components/Teams/Teams";
+import { Results } from "./components/Results/Results";
 
 function App() {
   const location = useLocation();
@@ -23,6 +24,11 @@ function App() {
         <Route path="/schedule">
           <PageTransitionWrapper>
             <Schedule />
+          </PageTransitionWrapper>
+        </Route>
+        <Route path="/results/:track">
+          <PageTransitionWrapper>
+            <Results />
           </PageTransitionWrapper>
         </Route>
         <Route path="/rankings/drivers">

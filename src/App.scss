@@ -29,6 +29,12 @@ body {
   box-sizing: border-box;
 }
 
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
 a {
   color: $redColor;
 

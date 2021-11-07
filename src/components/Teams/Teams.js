@@ -5,6 +5,8 @@ import { getCurrentTeams } from "../../queries/queries";
 import { Team } from "./Team/Team";
 import "./Teams.scss";
 import { getTeamColors } from "../../queries/staticData";
+import { Spinner } from "../UI/Spinner/Spinner";
+import { ErrorMessage } from "../UI/ErrorMessage/ErrorMessage";
 
 export const Teams = () => {
   const { data, status } = useQuery("teams", getCurrentTeams);
@@ -29,6 +31,10 @@ export const Teams = () => {
               />
             )
           )}
+        {status === "loading" && <Spinner />}
+        {status === "error" && (
+          <ErrorMessage description="Error while loading teams data" />
+        )}
       </div>
     </div>
   );
