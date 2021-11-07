@@ -58,8 +58,14 @@ const columns = [
 export const Results = (props) => {
   const location = useLocation();
   const { data, status } = useQuery(
-    ["roundResultsInside", location.pathname[location.pathname.length - 1]],
-    () => getRoundResults(location.pathname[location.pathname.length - 1])
+    [
+      "roundResultsInside",
+      location.pathname.split("/")[location.pathname.split("/").length - 1],
+    ],
+    () =>
+      getRoundResults(
+        location.pathname.split("/")[location.pathname.split("/").length - 1]
+      )
   );
 
   return (
@@ -67,7 +73,10 @@ export const Results = (props) => {
       {status !== "error" && (
         <Table
           columns={columns}
-          dataSource={data?.MRData.RaceTable.Races[0].Results}
+          dataSource={
+            data?.MRData.RaceTable.Races.legthn > 0 &&
+            data?.MRData.RaceTable.Races[0].Results
+          }
           loading={status === "success" ? false : true}
           pagination={false}
           size="middle"

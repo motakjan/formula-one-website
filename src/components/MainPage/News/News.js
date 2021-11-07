@@ -3,6 +3,8 @@ import { Title } from "../../UI/Title/Title";
 import { getNews } from "../../../queries/queries";
 import { useQuery } from "react-query";
 import { Article } from "./Article/Article";
+import { Spinner } from "../../UI/Spinner/Spinner";
+import { ErrorMessage } from "../../UI/ErrorMessage/ErrorMessage";
 
 export const News = ({ className }) => {
   const { data, status } = useQuery("news", getNews);
@@ -16,6 +18,10 @@ export const News = ({ className }) => {
             .map((article, index) => (
               <Article key={index} articleData={article} />
             ))}
+        {status === "loading" && <Spinner />}
+        {status === "error" && (
+          <ErrorMessage description="Error while loading news" />
+        )}
       </div>
     </div>
   );
