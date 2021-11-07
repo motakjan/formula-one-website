@@ -8,12 +8,13 @@ import { ErrorMessage } from "../../UI/ErrorMessage/ErrorMessage";
 
 export const News = ({ className }) => {
   const { data, status } = useQuery("news", getNews);
+  console.log(status);
   return (
     <div className={`news-section ${className}`}>
       <Title title="News" subtitle="NEWS FROM THE RACING WORLD" />
       <div className="articles">
         {status === "success" &&
-          data.articles
+          data?.articles
             .slice(0, 9)
             .map((article, index) => (
               <Article key={index} articleData={article} />

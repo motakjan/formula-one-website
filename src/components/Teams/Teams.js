@@ -9,7 +9,9 @@ import { Spinner } from "../UI/Spinner/Spinner";
 import { ErrorMessage } from "../UI/ErrorMessage/ErrorMessage";
 
 export const Teams = () => {
-  const { data, status } = useQuery("teams", getCurrentTeams);
+  const { data, status } = useQuery("teams", getCurrentTeams, {
+    useErrorBoundary: true,
+  });
 
   const teamColors = getTeamColors();
 

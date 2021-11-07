@@ -4,6 +4,8 @@ import { Table } from "antd";
 import { getRoundResults } from "../../queries/queries";
 import { useQuery } from "react-query";
 import { ErrorMessage } from "../UI/ErrorMessage/ErrorMessage";
+import { Title } from "../UI/Title/Title";
+import "./Results.scss";
 
 const columns = [
   {
@@ -70,21 +72,45 @@ export const Results = (props) => {
 
   console.log(data);
 
+  const correctLocation = () => {
+    if (data.MRData.RaceTable.Races[0].Circuit.Location.country === "UK") {
+      return "Great%20Britain";
+    }
+
+    if (data.MRData.RaceTable.Races[0].Circuit.Location.country === "UAE") {
+      return "Abu%20Dhab";
+    }
+
+    return data.MRData.RaceTable.Races[0].Circuit.Location.country;
+  };
+
   return (
-    <div style={{ padding: "8rem" }}>
+    <div className="results">
       {status === "success" && (
-        <Table
-          columns={columns}
-          dataSource={
-            data?.MRData.RaceTable.Races.length > 0 &&
-            data?.MRData.RaceTable.Races[0].Results
-          }
-          loading={status === "success" ? false : true}
-          pagination={false}
-          size="middle"
-          bordered={true}
-          rowKey={["Time", "time"]}
-        />
+        <>
+          <Title
+            title={`${data.MRData.RaceTable.Races[0].raceName}`}
+            subtitle={`${data.MRData.RaceTable.Races[0].Circuit.circuitName}`}
+          />
+          <div
+            className="hero-image"
+            style={{
+              backgroundImage: `url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/${correctLocation()}.jpg.transform/fullbleed/image.jpg)`,
+            }}
+          ></div>
+          <Table
+            columns={columns}
+            dataSource={
+              data?.MRData.RaceTable.Races.length > 0 &&
+              data?.MRData.RaceTable.Races[0].Results
+            }
+            loading={status === "success" ? false : true}
+            pagination={false}
+            size="small"
+            bordered={true}
+            rowKey={["Time", "time"]}
+          />
+        </>
       )}
       {status === "error" && (
         <ErrorMessage description="Error while loading results data" />
