@@ -70,8 +70,6 @@ export const Results = (props) => {
       )
   );
 
-  console.log(data);
-
   const correctLocation = () => {
     if (data.MRData.RaceTable.Races[0].Circuit.Location.country === "UK") {
       return "Great%20Britain";
@@ -86,7 +84,7 @@ export const Results = (props) => {
 
   return (
     <div className="results">
-      {status === "success" && (
+      {status === "success" && data.MRData.RaceTable.Races.length > 0 && (
         <>
           <Title
             title={`${data.MRData.RaceTable.Races[0].raceName}`}
@@ -97,7 +95,11 @@ export const Results = (props) => {
             style={{
               backgroundImage: `url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/${correctLocation()}.jpg.transform/fullbleed/image.jpg)`,
             }}
-          ></div>
+          >
+            <div className="transparent-black">
+              <p>{data.MRData.RaceTable.Races[0].Circuit.Location.country}</p>
+            </div>
+          </div>
           <Table
             columns={columns}
             dataSource={

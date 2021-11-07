@@ -15,6 +15,10 @@ export const Race = ({ raceData, showDelay }) => {
     getRoundResults(raceData.round)
   );
 
+  let today = new Date();
+  let currentDate =
+    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+
   const correctLocation = () => {
     if (raceData.Circuit.Location.country === "UK") {
       return "Great%20Britain";
@@ -25,6 +29,12 @@ export const Race = ({ raceData, showDelay }) => {
     }
 
     return raceData.Circuit.Location.country;
+  };
+
+  const showLink = () => {
+    return (
+      Date.parse(currentDate) > Date.parse(data.MRData.RaceTable.Races[0].date)
+    );
   };
 
   const variants = {
@@ -64,28 +74,30 @@ export const Race = ({ raceData, showDelay }) => {
         <h3>Placements:</h3>
 
         {status === "success" && isFinished() && (
-          <div className="placement">
-            <PlacementInfo
-              info={data.MRData.RaceTable.Races[0].Results[0]}
-              place={1}
-            />
-            <PlacementInfo
-              info={data.MRData.RaceTable.Races[0].Results[1]}
-              place={2}
-            />
-            <PlacementInfo
-              info={data.MRData.RaceTable.Races[0].Results[2]}
-              place={3}
-            />
-          </div>
+          <>
+            <div className="placement">
+              <PlacementInfo
+                info={data.MRData.RaceTable.Races[0].Results[0]}
+                place={1}
+              />
+              <PlacementInfo
+                info={data.MRData.RaceTable.Races[0].Results[1]}
+                place={2}
+              />
+              <PlacementInfo
+                info={data.MRData.RaceTable.Races[0].Results[2]}
+                place={3}
+              />
+            </div>
+            {showLink() && (
+              <Link to={`/results/${raceData.round}`}>Show More Info</Link>
+            )}
+          </>
         )}
         {status === "loading" && <Spinner />}
         {status === "error" && (
           <ErrorMessage description="Error while loading placement data" />
         )}
-        <Link to={{ pathname: `/results/${raceData.round}`, state: data }}>
-          Show More Info
-        </Link>
       </Card>
     </motion.span>
   );
