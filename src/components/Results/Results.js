@@ -68,19 +68,22 @@ export const Results = (props) => {
       )
   );
 
+  console.log(data);
+
   return (
     <div style={{ padding: "8rem" }}>
-      {status !== "error" && (
+      {status === "success" && (
         <Table
           columns={columns}
           dataSource={
-            data?.MRData.RaceTable.Races.legthn > 0 &&
+            data?.MRData.RaceTable.Races.length > 0 &&
             data?.MRData.RaceTable.Races[0].Results
           }
           loading={status === "success" ? false : true}
           pagination={false}
           size="middle"
           bordered={true}
+          rowKey={["Time", "time"]}
         />
       )}
       {status === "error" && (
