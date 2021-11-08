@@ -30,7 +30,7 @@ export const Navbar = () => {
   };
 
   const routeChange = () => {
-    let path = `newPath`;
+    let path = "/";
     history.push(path);
   };
 
