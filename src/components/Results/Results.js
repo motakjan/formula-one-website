@@ -12,7 +12,7 @@ const teamColors = getTeamColors();
 
 const columns = [
   {
-    title: "P",
+    title: "POS",
     dataIndex: "position",
     key: "position",
     responsive: ["sm"],
