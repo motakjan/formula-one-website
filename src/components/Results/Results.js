@@ -12,14 +12,16 @@ const teamColors = getTeamColors();
 
 const columns = [
   {
-    title: "POS",
+    title: "P",
     dataIndex: "position",
     key: "position",
+    responsive: ["sm"],
   },
   {
     title: "NO",
     dataIndex: ["Driver", "permanentNumber"],
     key: "number",
+    responsive: ["md"],
   },
   {
     title: "DRIVER",
@@ -42,11 +44,13 @@ const columns = [
     title: "CAR",
     dataIndex: ["Constructor", "name"],
     key: "time",
+    responsive: ["md"],
   },
   {
     title: "LAPS",
     dataIndex: "laps",
     key: "laps",
+    responsive: ["md"],
   },
   {
     title: "TIME",
@@ -62,6 +66,7 @@ const columns = [
     title: "POINTS",
     dataIndex: "points",
     key: "points",
+    responsive: ["sm"],
   },
 ];
 

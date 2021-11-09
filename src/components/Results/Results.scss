@@ -1,5 +1,12 @@
+@import "../../Variables.scss";
+
 .results {
   padding: 8rem 1.5rem 2rem 1.5rem;
+
+  table tr:nth-child(2n) td {
+    background-color: rgba(243, 243, 243, 0.788);
+  }
+
   .driver-bar {
     display: flex;
     align-items: center;
@@ -36,6 +43,18 @@
         border: 6px solid white;
         padding: 12px;
       }
+    }
+  }
+
+  @media screen and (max-width: $small) {
+    .main-title-wrapper {
+      .title {
+        font-size: 3em;
+      }
+    }
+
+    .ant-table.ant-table-small {
+      font-size: 12px;
     }
   }
 }
