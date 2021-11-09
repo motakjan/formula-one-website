@@ -10,7 +10,7 @@ import { ErrorMessage } from "../UI/ErrorMessage/ErrorMessage";
 
 export const Teams = () => {
   const { data, status } = useQuery("teams", getCurrentTeams, {
-    useErrorBoundary: true,
+    onError: (err) => console.error(err),
   });
 
   const teamColors = getTeamColors();

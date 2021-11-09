@@ -1,11 +1,14 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Table } from "antd";
 import { getRoundResults } from "../../queries/queries";
 import { useQuery } from "react-query";
 import { ErrorMessage } from "../UI/ErrorMessage/ErrorMessage";
 import { Title } from "../UI/Title/Title";
 import "./Results.scss";
+import { getTeamColors } from "../../queries/staticData";
+
+const teamColors = getTeamColors();
 
 const columns = [
   {
@@ -22,10 +25,15 @@ const columns = [
     title: "DRIVER",
     dataIndex: "Driver",
     key: "name",
-    render: (Driver) => (
+    render: (Driver, record) => (
       <>
-        <div>
-          {Driver.givenName} <strong>{Driver.familyName.toUpperCase()}</strong>
+        <div className="driver-bar">
+          <div
+            className="team-bar"
+            style={{ backgroundColor: teamColors[record.Constructor.name] }}
+          ></div>
+          {Driver.givenName}
+          <strong> {Driver.familyName.toUpperCase()}</strong>
         </div>
       </>
     ),
@@ -57,18 +65,17 @@ const columns = [
   },
 ];
 
-export const Results = (props) => {
-  const location = useLocation();
+export const Results = () => {
+  const { track } = useParams();
   const { data, status } = useQuery(
-    [
-      "roundResultsInside",
-      location.pathname.split("/")[location.pathname.split("/").length - 1],
-    ],
-    () =>
-      getRoundResults(
-        location.pathname.split("/")[location.pathname.split("/").length - 1]
-      )
+    ["roundResultsInside", track],
+    () => getRoundResults(track),
+    {
+      onError: (err) => console.error(err),
+    }
   );
+
+  console.log(data);
 
   const correctLocation = () => {
     if (data.MRData.RaceTable.Races[0].Circuit.Location.country === "UK") {

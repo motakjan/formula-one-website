@@ -7,8 +7,10 @@ import { Spinner } from "../../UI/Spinner/Spinner";
 import { ErrorMessage } from "../../UI/ErrorMessage/ErrorMessage";
 
 export const News = ({ className }) => {
-  const { data, status } = useQuery("news", getNews);
-  console.log(status);
+  const { data, status } = useQuery("news", getNews, {
+    onError: (err) => console.error(err),
+  });
+
   return (
     <div className={`news-section ${className}`}>
       <Title title="News" subtitle="NEWS FROM THE RACING WORLD" />

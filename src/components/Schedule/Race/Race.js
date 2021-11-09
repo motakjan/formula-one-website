@@ -11,8 +11,12 @@ import { ErrorMessage } from "../../UI/ErrorMessage/ErrorMessage";
 const { Meta } = Card;
 
 export const Race = ({ raceData, showDelay }) => {
-  const { data, status } = useQuery(["roundResults", raceData.round], () =>
-    getRoundResults(raceData.round)
+  const { data, status } = useQuery(
+    ["roundResults", raceData.round],
+    () => getRoundResults(raceData.round),
+    {
+      onError: (err) => console.error(err),
+    }
   );
 
   let today = new Date();
