@@ -1,7 +1,7 @@
 @import "../../Variables";
 
 .teams-page {
-  padding: 8rem 3rem 2rem 3rem;
+  padding: 8rem 3rem 4rem 3rem;
   background-color: white;
   height: 100%;
 
@@ -105,7 +105,7 @@
   }
 
   @media screen and (max-width: $large) {
-    padding: 8rem 1rem 2rem 1rem;
+    padding: 8rem 1rem 4rem 1rem;
   }
 
   @media screen and (min-width: $large) {

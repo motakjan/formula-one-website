@@ -1,10 +1,34 @@
 @import "../../Variables.scss";
 
 .results {
-  padding: 8rem 1.5rem 2rem 1.5rem;
+  padding: 8rem 1.5rem 4rem 1.5rem;
+
+  .fastest-lap {
+    color: #c411d1fd;
+  }
 
   table tr:nth-child(2n) td {
-    background-color: rgba(243, 243, 243, 0.788);
+    background-color: rgba(240, 240, 240, 0.788);
+  }
+
+  .race-data-select {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 2rem 0;
+
+    .select {
+      width: 12rem;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .ant-table-title {
+    font-weight: 600;
+    font-size: 1rem;
   }
 
   .driver-bar {
@@ -23,7 +47,7 @@
     height: 20rem;
     min-height: 20rem;
     //background-attachment: fixed;
-    background-position: bottom;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -54,13 +78,18 @@
     }
 
     .ant-table.ant-table-small {
-      font-size: 12px;
+      font-size: 10.5px;
     }
 
     .hero-image {
       p {
         font-size: 2.3rem !important;
       }
+    }
+
+    .race-data-select {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 }

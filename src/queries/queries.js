@@ -27,3 +27,11 @@ export const getCurrentTeams = async () => {
   const data = await response.json();
   return data;
 };
+
+export const getQualifierResults = async (round) => {
+  const response = await fetch(
+    `http://ergast.com/api/f1/2021/${round}/qualifying.json`
+  );
+  const data = await response.json();
+  return data;
+};

@@ -28,7 +28,7 @@ export const Teams = () => {
               <Team
                 key={`constructor-key-${index}`}
                 teamData={team}
-                delay={index * 0.2}
+                delay={index * 0.11}
                 color={teamColors[team.Constructor.name]}
               />
             )
