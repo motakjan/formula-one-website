@@ -35,3 +35,11 @@ export const getQualifierResults = async (round) => {
   const data = await response.json();
   return data;
 };
+
+export const getDriverStandings = async (round) => {
+  const response = await fetch(
+    `http://ergast.com/api/f1/2021/driverStandings.json`
+  );
+  const data = await response.json();
+  return data;
+};

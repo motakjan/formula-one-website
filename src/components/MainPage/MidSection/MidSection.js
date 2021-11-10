@@ -1,5 +1,6 @@
 import React from "react";
 import { Title } from "../../UI/Title/Title";
+import { Standings } from "./Standings/Standings";
 
 export const MidSection = () => {
   return (
@@ -24,6 +25,7 @@ export const MidSection = () => {
         reprehenderit nemo ea tempore, dicta ullam nostrum accusamus nisi
         incidunt omnis animi fugit unde numquam. Ut ad ipsa optio?
       </div>
+      <Standings />
     </div>
   );
 };
