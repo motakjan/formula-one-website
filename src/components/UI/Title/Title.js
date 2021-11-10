@@ -9,14 +9,7 @@ export const Title = ({ title, subtitle, light }) => {
       <h1 className="title" style={{ color: light ? "#ededed" : "#111111" }}>
         {title}
       </h1>
-      {subtitle && (
-        <h2
-          className="subtitle"
-          style={{ color: light ? "#ededed" : "#111111" }}
-        >
-          {subtitle}
-        </h2>
-      )}
+      {subtitle && <h2 className="subtitle">{subtitle}</h2>}
     </div>
   );
 };

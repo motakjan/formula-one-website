@@ -1,7 +1,6 @@
 @import "../../Variables";
 
 .teams-page {
-  padding: 8rem 3rem 4rem 3rem;
   background-color: white;
   height: 100%;
 
@@ -11,7 +10,7 @@
     .team-card {
       background-color: white;
       padding: 0.5rem 1rem;
-      margin: 1rem 1%;
+      margin: 1rem 1% 1rem 0;
       border-radius: 0.5rem;
       display: flex;
       flex-direction: column;
@@ -105,12 +104,12 @@
   }
 
   @media screen and (max-width: $large) {
-    padding: 8rem 1rem 4rem 1rem;
+    padding: 7rem 1rem 4rem 1rem;
   }
 
   @media screen and (min-width: $large) {
     .team-card {
-      width: 31%;
+      width: 32.3%;
     }
   }
 
@@ -123,12 +122,6 @@
   @media screen and (max-width: $medium) {
     .team-card {
       width: 100%;
-    }
-
-    .main-title-wrapper {
-      .title {
-        font-size: 2.1rem;
-      }
     }
   }
 }

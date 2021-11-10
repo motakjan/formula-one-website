@@ -1,7 +1,6 @@
 @import "../../Variables";
 
 .schedule {
-  padding: 8rem 1.5rem 4rem 1.5rem;
   .races {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -11,7 +10,7 @@
 
     .race {
       height: 100%;
-      width: 90%;
+      width: 100%;
       border: 4px solid $deepBlueColor;
       border-top: none;
       border-right: none;
@@ -74,11 +73,6 @@
     .races {
       .race {
         width: 100%;
-      }
-    }
-    .main-title-wrapper {
-      .title {
-        font-size: 3em;
       }
     }
   }

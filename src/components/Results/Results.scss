@@ -1,8 +1,6 @@
 @import "../../Variables.scss";
 
 .results {
-  padding: 8rem 1.5rem 4rem 1.5rem;
-
   .fastest-lap {
     color: #c411d1fd;
   }
@@ -71,12 +69,6 @@
   }
 
   @media screen and (max-width: $small) {
-    .main-title-wrapper {
-      .title {
-        font-size: 3em;
-      }
-    }
-
     .ant-table.ant-table-small {
       font-size: 10.5px;
     }

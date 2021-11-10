@@ -22,7 +22,7 @@ export const DriverTable = ({ status, data, type }) => {
       title: "POS",
       dataIndex: "position",
       key: "position",
-      responsive: ["sm"],
+      responsive: ["md"],
     },
     {
       title: "NO",
@@ -41,8 +41,12 @@ export const DriverTable = ({ status, data, type }) => {
               className="team-bar"
               style={{ backgroundColor: teamColors[record.Constructor.name] }}
             ></div>
-            {Driver.givenName}
-            <strong> {Driver.familyName.toUpperCase()}</strong>
+            {!concatName && Driver.givenName}
+            <strong>
+              {!concatName
+                ? Driver.familyName.toUpperCase()
+                : Driver.familyName.toUpperCase().substr(0, 3)}
+            </strong>
           </div>
         </>
       ),
@@ -73,7 +77,6 @@ export const DriverTable = ({ status, data, type }) => {
       title: "POINTS",
       dataIndex: "points",
       key: "points",
-      responsive: ["sm"],
     },
   ];
 
@@ -103,7 +106,6 @@ export const DriverTable = ({ status, data, type }) => {
             ></div>
             {!concatName && Driver.givenName}
             <strong>
-              {" "}
               {!concatName
                 ? Driver.familyName.toUpperCase()
                 : Driver.familyName.toUpperCase().substr(0, 3)}
