@@ -1,39 +1,19 @@
 import React from "react";
+import {
+  getFlagName,
+  getDriverImageName,
+} from "../../../../../queries/staticData";
 
-export const TopThreeCard = ({ scale, place, data, teamColor }) => {
-  const getImageName = () => {
-    const given = data.Driver.givenName
-      .substr(0, 3)
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
-    const family = data.Driver.familyName
-      .substr(0, 3)
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
-
-    return given + family;
-  };
-
-  const getFlagName = () => {
-    const given = data.Driver.givenName
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
-    const family = data.Driver.familyName
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
-
-    return `${given}-${family}`;
-  };
-
+export const TopThreeCard = ({ place, data, teamColor }) => {
   const getStripes = () => {
     let stripes = [];
     for (let i = 0; i < place; i++) {
       stripes.push(
-        <div className="bar" style={{ backgroundColor: teamColor }}>
+        <div
+          className="bar"
+          key={`bar-${i}-${place}`}
+          style={{ backgroundColor: teamColor }}
+        >
           &nbsp;
         </div>
       );
@@ -49,8 +29,10 @@ export const TopThreeCard = ({ scale, place, data, teamColor }) => {
       <div className="image-wrapper">
         <img
           className="driver-image"
-          src={`https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2021/${getImageName()}01.png.transform/2col/image.png`}
-          alt={`${getImageName()}-1-main`}
+          src={`https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2021/${getDriverImageName(
+            data
+          )}01.png.transform/2col/image.png`}
+          alt={`${getDriverImageName(data)}-1-main`}
         />
       </div>
 
@@ -62,8 +44,10 @@ export const TopThreeCard = ({ scale, place, data, teamColor }) => {
           <p className="first">{data.Driver.givenName}</p>
           <img
             className="driver-flag"
-            src={`https://www.formula1.com/content/fom-website/en/drivers/${getFlagName()}/_jcr_content/countryFlag.transform/1col/image.png`}
-            alt={`${getFlagName()}-1-flag`}
+            src={`https://www.formula1.com/content/fom-website/en/drivers/${getFlagName(
+              data
+            )}/_jcr_content/countryFlag.transform/1col/image.png`}
+            alt={`${getFlagName(data)}-1-flag`}
           />
         </div>
         <p className="last">{data.Driver.familyName}</p>

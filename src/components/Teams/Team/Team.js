@@ -1,15 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { correctTeamName } from "../../../queries/staticData";
 
 export const Team = ({ teamData, delay, color }) => {
-  const correctName = () => {
-    if (teamData.Constructor.name === "Alfa Romeo") return "alfa-romeo-racing";
-    if (teamData.Constructor.name === "Alpine F1 Team") return "alpine";
-    if (teamData.Constructor.name === "Red Bull") return "red-bull-racing";
-
-    return teamData.Constructor.name.toLowerCase().split(" ").join("-");
-  };
-
   const variants = {
     initial: { x: "-100%", opacity: 0 },
     animate: { x: 0, opacity: 1, transition: { delay: delay, duration: 0.3 } },
@@ -41,15 +34,19 @@ export const Team = ({ teamData, delay, color }) => {
             </div>
 
             <img
-              src={`https://www.formula1.com/content/dam/fom-website/teams/2021/${correctName()}-logo.png.transform/2col/image.png`}
-              alt={`logo-${correctName()}`}
+              src={`https://www.formula1.com/content/dam/fom-website/teams/2021/${correctTeamName(
+                teamData
+              )}-logo.png.transform/2col/image.png`}
+              alt={`logo-${correctTeamName(teamData)}`}
             />
           </div>
         </div>
         <div className="image-wrapper">
           <img
-            src={`https://www.formula1.com/content/dam/fom-website/teams/2021/${correctName()}.png.transform/6col/image.png`}
-            alt={`formula-${correctName()}`}
+            src={`https://www.formula1.com/content/dam/fom-website/teams/2021/${correctTeamName(
+              teamData
+            )}.png.transform/6col/image.png`}
+            alt={`formula-${correctTeamName(teamData)}`}
           />
         </div>
 

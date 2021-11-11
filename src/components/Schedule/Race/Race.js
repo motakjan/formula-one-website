@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Spinner } from "../../UI/Spinner/Spinner";
 import { ErrorMessage } from "../../UI/ErrorMessage/ErrorMessage";
+import { correctLocation } from "../../../queries/staticData";
 
 const { Meta } = Card;
 
@@ -22,18 +23,6 @@ export const Race = ({ raceData, showDelay }) => {
   let today = new Date();
   let currentDate =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-
-  const correctLocation = () => {
-    if (raceData.Circuit.Location.country === "UK") {
-      return "Great%20Britain";
-    }
-
-    if (raceData.Circuit.Location.country === "UAE") {
-      return "Abu%20Dhab";
-    }
-
-    return raceData.Circuit.Location.country;
-  };
 
   const showLink = () => {
     return (
@@ -72,7 +61,9 @@ export const Race = ({ raceData, showDelay }) => {
           <img
             className="circuit-map"
             alt={`circuit-${raceData.raceName}-map`}
-            src={`https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/${correctLocation()}%20carbon.png.transform/8col/image.png`}
+            src={`https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/${correctLocation(
+              raceData
+            )}%20carbon.png.transform/8col/image.png`}
           />
         </div>
         <h3>Placements:</h3>

@@ -21,10 +21,9 @@ export const Standings = () => {
 
   return (
     <div className="top-three-standings">
-      {status === "success" && (
+      {status === "success" && data && (
         <>
           <TopThreeCard
-            scale={2}
             place={2}
             data={
               data?.MRData.StandingsTable.StandingsLists[0].DriverStandings[1]
@@ -37,7 +36,6 @@ export const Standings = () => {
             }
           />
           <TopThreeCard
-            scale={3}
             place={1}
             data={
               data?.MRData.StandingsTable.StandingsLists[0].DriverStandings[0]
@@ -50,7 +48,6 @@ export const Standings = () => {
             }
           />
           <TopThreeCard
-            scale={1}
             place={3}
             data={
               data?.MRData.StandingsTable.StandingsLists[0].DriverStandings[2]
@@ -62,10 +59,7 @@ export const Standings = () => {
               ]
             }
           />
-          <motion.div
-            style={{ width: "100%" }}
-            whileHover={{ scale: 1.05, transition: { duration: 0.25 } }}
-          >
+          <motion.div style={{ width: "100%" }}>
             <Link to="/rankings/drivers" className="standings-button-link">
               <Button
                 className="standings-button"

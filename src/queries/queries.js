@@ -1,12 +1,14 @@
+const year = 2021;
+
 export const getCurrentSeason = async () => {
-  const response = await fetch("http://ergast.com/api/f1/2021.json");
+  const response = await fetch(`http://ergast.com/api/f1/${year}.json`);
   const data = await response.json();
   return data;
 };
 
 export const getRoundResults = async (round) => {
   const response = await fetch(
-    `http://ergast.com/api/f1/2021/${round}/results.json`
+    `http://ergast.com/api/f1/${year}/${round}/results.json`
   );
   const data = await response.json();
   return data;
@@ -22,7 +24,7 @@ export const getNews = async () => {
 
 export const getCurrentTeams = async () => {
   const response = await fetch(
-    `http://ergast.com/api/f1/2021/constructorStandings.json`
+    `http://ergast.com/api/f1/${year}/constructorStandings.json`
   );
   const data = await response.json();
   return data;
@@ -30,7 +32,7 @@ export const getCurrentTeams = async () => {
 
 export const getQualifierResults = async (round) => {
   const response = await fetch(
-    `http://ergast.com/api/f1/2021/${round}/qualifying.json`
+    `http://ergast.com/api/f1/${year}/${round}/qualifying.json`
   );
   const data = await response.json();
   return data;
@@ -38,7 +40,7 @@ export const getQualifierResults = async (round) => {
 
 export const getDriverStandings = async (round) => {
   const response = await fetch(
-    `http://ergast.com/api/f1/2021/driverStandings.json`
+    `http://ergast.com/api/f1/${year}/driverStandings.json`
   );
   const data = await response.json();
   return data;
