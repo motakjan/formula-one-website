@@ -62,11 +62,15 @@ export const Standings = () => {
               ]
             }
           />
-          <motion.div style={{ width: "100%" }} whileHover={{ scale: 1.05 }}>
+          <motion.div
+            style={{ width: "100%" }}
+            whileHover={{ scale: 1.05, transition: { duration: 0.25 } }}
+          >
             <Link to="/rankings/drivers" className="standings-button-link">
               <Button
                 className="standings-button"
                 icon={<OrderedListOutlined />}
+                type="dashed"
               >
                 Get Full Standings
               </Button>

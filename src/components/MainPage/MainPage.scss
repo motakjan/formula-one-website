@@ -104,10 +104,10 @@
 
     .top-three-standings {
       display: flex;
-      justify-content: space-around;
-      gap: 5rem;
+      justify-content: space-between;
       margin: 3rem 0 1rem 0;
       flex-wrap: wrap;
+      width: 73%;
       .position-1 {
         transform: scale(1.2);
       }
@@ -120,7 +120,7 @@
           position: absolute;
           color: $darkColor;
           z-index: 0;
-          width: 15rem;
+          width: 14rem;
           font-size: 2em;
           font-family: FormulaBold;
           margin-top: 4rem;
@@ -152,12 +152,12 @@
           }
         }
         .team-color-stripe {
-          width: 15rem;
+          width: 14rem;
           height: 0.5rem;
         }
         .bottom-name {
           background-color: black;
-          width: 15rem;
+          width: 14rem;
           padding: 0.8rem;
           border-bottom-left-radius: 8px;
           border-bottom-right-radius: 8px;
@@ -183,7 +183,7 @@
     }
   }
 
-  @media screen and (max-width: calc($medium + 50px)) {
+  @media screen and (max-width: $medium) {
     .mainImageText {
       padding: 2rem;
 
@@ -196,10 +196,30 @@
       }
     }
 
+    .articles {
+      .article {
+        width: 100%;
+      }
+    }
+
+    .main-body-dark {
+      font-size: 0.66rem;
+    }
+  }
+
+  @media screen and (max-width: calc($large + 230px)) {
+    .articles {
+      .article {
+        width: 100%;
+      }
+    }
+    .main-page-padding {
+      padding: 3rem;
+    }
+
     .top-three-standings {
       flex-direction: column;
-      gap: 1rem !important;
-      width: 100%;
+      width: 100% !important;
       .position-1 {
         order: -1;
         transform: scale(1) !important;
@@ -216,27 +236,6 @@
           margin-right: 0 !important;
         }
       }
-    }
-
-    .articles {
-      .article {
-        width: 100%;
-      }
-    }
-
-    .main-body-dark {
-      font-size: 0.66rem;
-    }
-  }
-
-  @media screen and (max-width: $large) {
-    .articles {
-      .article {
-        width: 100%;
-      }
-    }
-    .main-page-padding {
-      padding: 3rem;
     }
   }
 
