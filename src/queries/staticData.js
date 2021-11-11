@@ -10,6 +10,9 @@ export const getTeamColors = () => {
     McLaren: "#FF8700",
     "Alfa Romeo": "#900000",
     Williams: "#005AFF",
+    Renault: "#ffff0e",
+    "Racing Point": "#cb47b1",
+    "Toro Rosso": "#f9fafa",
   };
   return teamColors;
 };

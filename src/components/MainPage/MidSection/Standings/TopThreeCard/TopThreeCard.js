@@ -4,7 +4,8 @@ import {
   getDriverImageName,
 } from "../../../../../queries/staticData";
 
-export const TopThreeCard = ({ place, data, teamColor }) => {
+export const TopThreeCard = ({ place, data, teamColor, year }) => {
+  console.log(year);
   const getStripes = () => {
     let stripes = [];
     for (let i = 0; i < place; i++) {
@@ -29,7 +30,7 @@ export const TopThreeCard = ({ place, data, teamColor }) => {
       <div className="image-wrapper">
         <img
           className="driver-image"
-          src={`https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2021/${getDriverImageName(
+          src={`https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/${year}/${getDriverImageName(
             data
           )}01.png.transform/2col/image.png`}
           alt={`${getDriverImageName(data)}-1-main`}

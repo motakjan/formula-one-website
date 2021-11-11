@@ -11,10 +11,10 @@ import { correctLocation } from "../../../queries/staticData";
 
 const { Meta } = Card;
 
-export const Race = ({ raceData, showDelay }) => {
+export const Race = ({ raceData, showDelay, year }) => {
   const { data, status } = useQuery(
-    ["roundResults", raceData.round],
-    () => getRoundResults(raceData.round),
+    ["roundResults", raceData.round, year],
+    () => getRoundResults(raceData.round, year),
     {
       onError: (err) => console.error(err),
     }
@@ -62,7 +62,8 @@ export const Race = ({ raceData, showDelay }) => {
             className="circuit-map"
             alt={`circuit-${raceData.raceName}-map`}
             src={`https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/${correctLocation(
-              raceData
+              raceData,
+              year
             )}%20carbon.png.transform/8col/image.png`}
           />
         </div>
@@ -74,14 +75,17 @@ export const Race = ({ raceData, showDelay }) => {
               <PlacementInfo
                 info={data.MRData.RaceTable.Races[0].Results[0]}
                 place={1}
+                year={year}
               />
               <PlacementInfo
                 info={data.MRData.RaceTable.Races[0].Results[1]}
                 place={2}
+                year={year}
               />
               <PlacementInfo
                 info={data.MRData.RaceTable.Races[0].Results[2]}
                 place={3}
+                year={year}
               />
             </div>
             {showLink() && (

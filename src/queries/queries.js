@@ -1,12 +1,10 @@
-const year = 2021;
-
-export const getCurrentSeason = async () => {
+export const getCurrentSeason = async (year) => {
   const response = await fetch(`http://ergast.com/api/f1/${year}.json`);
   const data = await response.json();
   return data;
 };
 
-export const getRoundResults = async (round) => {
+export const getRoundResults = async (round, year) => {
   const response = await fetch(
     `http://ergast.com/api/f1/${year}/${round}/results.json`
   );
@@ -22,7 +20,7 @@ export const getNews = async () => {
   return data;
 };
 
-export const getCurrentTeams = async () => {
+export const getCurrentTeams = async (year) => {
   const response = await fetch(
     `http://ergast.com/api/f1/${year}/constructorStandings.json`
   );
@@ -30,7 +28,7 @@ export const getCurrentTeams = async () => {
   return data;
 };
 
-export const getQualifierResults = async (round) => {
+export const getQualifierResults = async (round, year) => {
   const response = await fetch(
     `http://ergast.com/api/f1/${year}/${round}/qualifying.json`
   );
@@ -38,7 +36,7 @@ export const getQualifierResults = async (round) => {
   return data;
 };
 
-export const getDriverStandings = async (round) => {
+export const getDriverStandings = async (year) => {
   const response = await fetch(
     `http://ergast.com/api/f1/${year}/driverStandings.json`
   );

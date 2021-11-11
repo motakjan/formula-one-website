@@ -8,23 +8,25 @@ import { Title } from "../UI/Title/Title";
 import "./Results.scss";
 import { HeroImage } from "./HeroImage/HeroImage";
 import { Select } from "antd";
+import { useYear } from "../../store/YearContext";
 const { Option } = Select;
 
 export const Results = () => {
+  const { year } = useYear();
   const { track } = useParams();
   const [selectValue, setSelectValue] = useState("race");
 
   const { data: raceData, status } = useQuery(
-    ["roundResultsInside", track],
-    () => getRoundResults(track),
+    ["roundResultsInside", track, year],
+    () => getRoundResults(track, year),
     {
       onError: (err) => console.error(err),
     }
   );
 
   const { data: qualifierData, status: qualifierStatus } = useQuery(
-    ["roundResultsInsideQualifier", track],
-    () => getQualifierResults(track),
+    ["roundResultsInsideQualifier", track, year],
+    () => getQualifierResults(track, year),
     {
       onError: (err) => console.error(err),
     }

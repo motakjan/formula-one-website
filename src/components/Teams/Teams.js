@@ -7,11 +7,17 @@ import "./Teams.scss";
 import { getTeamColors } from "../../queries/staticData";
 import { Spinner } from "../UI/Spinner/Spinner";
 import { ErrorMessage } from "../UI/ErrorMessage/ErrorMessage";
+import { useYear } from "../../store/YearContext";
 
 export const Teams = () => {
-  const { data, status } = useQuery("teams", getCurrentTeams, {
-    onError: (err) => console.error(err),
-  });
+  const { year } = useYear();
+  const { data, status } = useQuery(
+    ["teams", year],
+    () => getCurrentTeams(year),
+    {
+      onError: (err) => console.error(err),
+    }
+  );
 
   const teamColors = getTeamColors();
 
@@ -30,6 +36,7 @@ export const Teams = () => {
                 teamData={team}
                 delay={index * 0.11}
                 color={teamColors[team.Constructor.name]}
+                year={year}
               />
             )
           )}

@@ -1,7 +1,7 @@
 import React from "react";
 import { getDriverImageName } from "../../../../queries/staticData";
 
-export const PlacementInfo = ({ info, place }) => {
+export const PlacementInfo = ({ info, place, year }) => {
   return (
     <span className="placement-driver">
       <span>
@@ -13,10 +13,10 @@ export const PlacementInfo = ({ info, place }) => {
 
       <img
         className="placement-driver-image"
-        src={`https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2021/${getDriverImageName(
+        src={`https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/${year}/${getDriverImageName(
           info
         )}01.png.transform/2col/image.png`}
-        alt={`${getDriverImageName(info)}-1`}
+        alt={`${getDriverImageName(info, year)}-1`}
       />
     </span>
   );

@@ -1,8 +1,12 @@
 import React from "react";
 import "./Footer.scss";
 import { LinkedinFilled, MailOutlined, GithubFilled } from "@ant-design/icons";
+import { useYear } from "../../store/YearContext";
+import { InputNumber, Button, Space } from "antd";
 
 export const Footer = () => {
+  const { year, setYear } = useYear();
+  console.log(year);
   return (
     <div className="footer">
       <div className="footer-links">
@@ -38,6 +42,10 @@ export const Footer = () => {
         >
           Used API
         </a>{" "}
+        Year:{" "}
+        <Space>
+          <InputNumber min={2018} max={2021} value={year} onChange={setYear} />
+        </Space>
       </span>
       <span>
         Designed By <strong>Jan MOTÁK</strong>

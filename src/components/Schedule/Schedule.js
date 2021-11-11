@@ -6,17 +6,23 @@ import { Spinner } from "../UI/Spinner/Spinner";
 import { Title } from "../UI/Title/Title";
 import { Race } from "./Race/Race";
 import "./Schedule.scss";
+import { useYear } from "../../store/YearContext";
 
 export const Schedule = () => {
-  const { data, status } = useQuery("seasonData", getCurrentSeason, {
-    onError: (err) => console.error(err),
-  });
+  const { year } = useYear();
+  const { data, status } = useQuery(
+    ["seasonData", year],
+    () => getCurrentSeason(year),
+    {
+      onError: (err) => console.error(err),
+    }
+  );
 
   return (
     <div className="schedule">
       <Title
-        title={"F1 Schedule 2021"}
-        subtitle={"2021 FIA FORMULA ONE WORLD CHAMPIONSHIP™ RACE CALENDAR"}
+        title={`F1 Schedule ${year}`}
+        subtitle={`${year} FIA FORMULA ONE WORLD CHAMPIONSHIP™ RACE CALENDAR`}
       />
       <div className="races">
         {status === "success" &&
@@ -25,6 +31,7 @@ export const Schedule = () => {
               key={`schedule-item-${index}`}
               raceData={race}
               showDelay={0.1 * index}
+              year={year}
             />
           ))}
         {status === "loading" && <Spinner />}

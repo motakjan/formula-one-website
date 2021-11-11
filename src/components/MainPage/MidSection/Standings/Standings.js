@@ -7,13 +7,15 @@ import { Button } from "antd";
 import { OrderedListOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useYear } from "../../../../store/YearContext";
 
 const teamColors = getTeamColors();
 
 export const Standings = () => {
+  const { year } = useYear();
   const { data, status } = useQuery(
-    "driverStandingsTopThree",
-    getDriverStandings,
+    ["driverStandingsTopThree", year],
+    () => getDriverStandings(year),
     {
       onError: (err) => console.error(err),
     }
@@ -34,6 +36,7 @@ export const Standings = () => {
                   .Constructors[0].name
               ]
             }
+            year={year}
           />
           <TopThreeCard
             place={1}
@@ -46,6 +49,7 @@ export const Standings = () => {
                   .Constructors[0].name
               ]
             }
+            year={year}
           />
           <TopThreeCard
             place={3}
@@ -58,6 +62,7 @@ export const Standings = () => {
                   .Constructors[0].name
               ]
             }
+            year={year}
           />
           <motion.div style={{ width: "100%" }}>
             <Link to="/rankings/drivers" className="standings-button-link">
