@@ -2,11 +2,15 @@ import React from "react";
 import "./Footer.scss";
 import { LinkedinFilled, MailOutlined, GithubFilled } from "@ant-design/icons";
 import { useYear } from "../../store/YearContext";
-import { InputNumber, Button, Space } from "antd";
+import { InputNumber, Button, Space, Slider } from "antd";
 
 export const Footer = () => {
   const { year, setYear } = useYear();
-  console.log(year);
+
+  function formatter(value) {
+    return `YEAR: ${value}`;
+  }
+
   return (
     <div className="footer">
       <div className="footer-links">
@@ -33,19 +37,15 @@ export const Footer = () => {
           Github
         </a>
       </div>
-      <span>
-        <a
-          href="http://ergast.com/mrd/"
-          className="footer-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Used API
-        </a>{" "}
-        Year:{" "}
-        <Space>
-          <InputNumber min={2018} max={2021} value={year} onChange={setYear} />
-        </Space>
+      <span className="slider">
+        <Slider
+          defaultValue={2021}
+          min={2018}
+          max={2021}
+          onChange={setYear}
+          value={year}
+          tipFormatter={formatter}
+        />
       </span>
       <span>
         Designed By <strong>Jan MOTÁK</strong>
