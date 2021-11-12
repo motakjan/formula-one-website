@@ -1,8 +1,19 @@
 # Formula One Website
 
-Simple react app for f1 information.
+Simple application to get information about current formula one stats. This web application allows the user to browse between schedule, rankings and round results from years between 2018 and 2021. 
 
-## Final Images
+Feel free to visit the site at [https://vibrant-montalcini-137939.netlify.app/](https://vibrant-montalcini-137939.netlify.app/)
+
+## Used Technologies
+
+1. Javascript
+2. ReactJS
+  - [Framer-Motion](https://www.framer.com/docs/examples/)
+  - [React-Query](https://react-query.tanstack.com/)
+  - [React-Router](https://reactrouter.com/)
+3. CSS, SCSS
+
+## Final Images Desktop
 
 ![image](https://user-images.githubusercontent.com/61924776/141533777-d85cdae2-4e0b-4a68-9e09-375021607ddf.png)
 
@@ -12,15 +23,7 @@ Simple react app for f1 information.
 
 ![image](https://user-images.githubusercontent.com/61924776/141533865-0e79bd41-65a2-4e14-b18c-c8af1af935fc.png)
 
-![image](https://user-images.githubusercontent.com/61924776/141535509-f899e982-8dd2-4a48-8f60-6b64a8400e8d.png)
+## Final Images Phone/Tablet
 
-![image](https://user-images.githubusercontent.com/61924776/141535583-4d0a2def-1bdc-4c28-8093-62ea16996763.png)
+![image](https://user-images.githubusercontent.com/61924776/141536830-fbbdfd54-0079-4ceb-a824-fcb6dac86911.png) ![image](https://user-images.githubusercontent.com/61924776/141536875-e8770a75-6435-4715-8fe8-9c0118662f59.png) ![image](https://user-images.githubusercontent.com/61924776/141536924-de27ad87-38bc-4f3e-b63b-a3d65afa2ee8.png) ![image](https://user-images.githubusercontent.com/61924776/141537108-e4bf3259-7aa3-48bc-b21a-dee92b8ed4c4.png)
 
-![image](https://user-images.githubusercontent.com/61924776/141535669-ad3403b6-87cb-446b-9eef-a7efb7dc507a.png)
-
-## Available Scripts
-
-React (Framer-Motion, React-Query)
-SCSS
-
-https://vibrant-montalcini-137939.netlify.app/
