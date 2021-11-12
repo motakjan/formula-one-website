@@ -11,6 +11,7 @@ Feel free to visit the site at [https://vibrant-montalcini-137939.netlify.app/](
   - [Framer-Motion](https://www.framer.com/docs/examples/)
   - [React-Query](https://react-query.tanstack.com/)
   - [React-Router](https://reactrouter.com/)
+  - [Ant-Design](https://ant.design/)
 3. CSS, SCSS
 
 ## Final Images Desktop
