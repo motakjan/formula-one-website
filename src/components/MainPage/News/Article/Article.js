@@ -18,14 +18,18 @@ export const Article = ({ articleData }) => {
             <Image
               className="article-image"
               alt="example"
-              src={articleData.urlToImage}
+              src={
+                articleData.image.contentUrl
+                  ? articleData.image.contentUrl
+                  : "/blackbg.jpg"
+              }
             />
           </motion.div>
         </div>
       }
     >
       <Meta title={articleData.title} />
-      <p>{`${articleData.content.substr(0, 80)}...`}</p>
+      <p>{`${articleData.description.substr(0, 80)}...`}</p>
       <a href={articleData.url} target="_blank" rel="noopener noreferrer">
         Read Article
       </a>

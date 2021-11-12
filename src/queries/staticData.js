@@ -46,8 +46,6 @@ export const getDriverImageName = (data, add = "", year = "2021") => {
     add = "02";
   }
 
-  console.log(family, year);
-
   if (data.Driver.familyName === "Latifi" && year === 2021) {
     given = "nic";
     family = "laf";

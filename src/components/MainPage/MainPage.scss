@@ -25,6 +25,10 @@
           .ant-image {
             width: 100%;
           }
+          .article-image {
+            height: 16rem;
+            object-fit: cover;
+          }
         }
         margin: 0.2rem;
       }

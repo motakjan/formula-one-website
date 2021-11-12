@@ -16,7 +16,7 @@ export const News = ({ className }) => {
       <Title title="News" subtitle="NEWS FROM THE RACING WORLD" />
       <div className="articles">
         {status === "success" &&
-          data?.articles
+          data?.value
             .slice(0, 9)
             .map((article, index) => (
               <Article key={index} articleData={article} />
