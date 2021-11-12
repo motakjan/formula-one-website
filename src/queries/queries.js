@@ -37,6 +37,7 @@ export const getQualifierResults = async (round, year) => {
 };
 
 export const getDriverStandings = async (year) => {
+  console.log(`http://ergast.com/api/f1/2018/driverStandings.json`);
   const response = await fetch(
     `http://ergast.com/api/f1/${year}/driverStandings.json`
   );

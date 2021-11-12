@@ -25,7 +25,7 @@ export const Teams = () => {
     <div className="teams-page block">
       <Title
         title="Constructors Standings"
-        subtitle="CURRENT CONSTRUCTORS STANDINGS FOR SEASON 2021"
+        subtitle={`CURRENT CONSTRUCTORS STANDINGS FOR SEASON ${year}`}
       />
       <div className="team-cards">
         {status === "success" &&

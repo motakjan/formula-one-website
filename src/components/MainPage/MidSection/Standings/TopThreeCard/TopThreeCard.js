@@ -5,7 +5,6 @@ import {
 } from "../../../../../queries/staticData";
 
 export const TopThreeCard = ({ place, data, teamColor, year }) => {
-  console.log(year);
   const getStripes = () => {
     let stripes = [];
     for (let i = 0; i < place; i++) {

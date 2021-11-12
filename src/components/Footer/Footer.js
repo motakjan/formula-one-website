@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.scss";
 import { LinkedinFilled, MailOutlined, GithubFilled } from "@ant-design/icons";
 import { useYear } from "../../store/YearContext";
-import { InputNumber, Button, Space, Slider } from "antd";
+import { Slider } from "antd";
 
 export const Footer = () => {
   const { year, setYear } = useYear();

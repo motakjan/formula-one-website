@@ -1,0 +1,124 @@
+@import "../../Variables";
+
+.drivers {
+  height: 100%;
+  .driver-cards {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    .driver-card {
+      padding: 1rem 1rem 0 1rem;
+      margin: 0 2% 1rem 0;
+      border-top-right-radius: 10px;
+      border-top: 2px solid $darkColor;
+      border-right: 2px solid $darkColor;
+      width: 31.3%;
+      .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $darkColor;
+        .position {
+          font-size: 3rem;
+          font-family: FormulaBlack;
+          margin-bottom: 0;
+        }
+        .points {
+          font-size: 1.15rem;
+          text-align: center;
+          .points-badge {
+            background-color: $darkColor;
+            color: $lightColor;
+            padding: 0.2rem;
+            border-radius: 0.4rem;
+            font-size: 0.9rem;
+          }
+        }
+      }
+
+      .mid-bar {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin: 0.8rem 0;
+        border-bottom: 1px solid $darkColor;
+
+        .player-name {
+          display: flex;
+          align-items: center;
+          margin-bottom: 0.7rem;
+          .team-bar {
+            width: 0.5rem;
+            height: 2.2rem;
+            margin-right: 0.5rem;
+            background-color: $darkColor;
+            border: 1px solid $lightColor;
+          }
+          p {
+            font-family: FormulaRegular;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: 0.5px;
+            font-weight: 400;
+            margin-bottom: 0;
+          }
+          strong {
+            font-family: FormulaBold;
+            font-size: 18px;
+            line-height: 24px;
+          }
+        }
+        .driver-flag {
+          height: 2rem;
+          border-radius: 5px;
+        }
+      }
+
+      .bottom-bar {
+        .constructor-name {
+          font-family: FormulaRegular;
+          font-size: 12px;
+          line-height: 15px;
+          letter-spacing: 0.5px;
+          font-weight: 400;
+          color: #67676d;
+        }
+
+        .image-wrapper {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          text-align: center;
+          background-image: url(https://www.formula1.com/etc/designs/fom-website/images/patterns/plus-x1.png);
+          background-size: 12px;
+          background-repeat: repeat;
+          background-size: 8px;
+          border-radius: 10px;
+          overflow: hidden;
+          background-position-x: -1px;
+          margin-bottom: 0.3rem;
+          .number-wrapper {
+            background-color: white;
+            .placement-driver-number-image {
+              padding: 0.15rem;
+              width: 100px;
+              height: 55px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $large) {
+    .driver-card {
+      width: 48% !important;
+    }
+  }
+
+  @media screen and (max-width: $medium) {
+    .driver-card {
+      width: 100% !important;
+    }
+  }
+}

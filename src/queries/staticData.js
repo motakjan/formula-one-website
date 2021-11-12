@@ -30,19 +30,28 @@ export const getFlagName = (data) => {
   return `${given}-${family}`;
 };
 
-export const getDriverImageName = (data) => {
-  const given = data.Driver.givenName
+export const getDriverImageName = (data, add = "") => {
+  let given = data.Driver.givenName
     .substr(0, 3)
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
-  const family = data.Driver.familyName
+  let family = data.Driver.familyName
     .substr(0, 3)
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
 
-  return given + family;
+  if (data.Driver.familyName === "Schumacher" && add !== "") {
+    add = "02";
+  }
+
+  if (data.Driver.familyName === "Latifi") {
+    given = "nic";
+    family = "laf";
+  }
+
+  return given + family + add;
 };
 
 export const correctLocation = (raceData) => {

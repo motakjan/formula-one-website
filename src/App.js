@@ -9,6 +9,7 @@ import { MainPage } from "./components/MainPage/MainPage";
 import { Footer } from "./components/Footer/Footer";
 import { Teams } from "./components/Teams/Teams";
 import { Results } from "./components/Results/Results";
+import { Drivers } from "./components/Drivers/Drivers";
 
 function App() {
   const location = useLocation();
@@ -33,7 +34,7 @@ function App() {
         </Route>
         <Route path="/rankings/drivers">
           <PageTransitionWrapper>
-            <div className="block red">rankings/drivers</div>
+            <Drivers />
           </PageTransitionWrapper>
         </Route>
         <Route path="/rankings/constructors">
