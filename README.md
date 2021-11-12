@@ -25,5 +25,5 @@ Feel free to visit the site at [https://vibrant-montalcini-137939.netlify.app/](
 
 ## Final Images Phone/Tablet
 
-![image](https://user-images.githubusercontent.com/61924776/141536830-fbbdfd54-0079-4ceb-a824-fcb6dac86911.png) ![image](https://user-images.githubusercontent.com/61924776/141536875-e8770a75-6435-4715-8fe8-9c0118662f59.png) ![image](https://user-images.githubusercontent.com/61924776/141536924-de27ad87-38bc-4f3e-b63b-a3d65afa2ee8.png) ![image](https://user-images.githubusercontent.com/61924776/141537108-e4bf3259-7aa3-48bc-b21a-dee92b8ed4c4.png)
+![image](https://user-images.githubusercontent.com/61924776/141536830-fbbdfd54-0079-4ceb-a824-fcb6dac86911.png) ![image](https://user-images.githubusercontent.com/61924776/141536875-e8770a75-6435-4715-8fe8-9c0118662f59.png) ![image](https://user-images.githubusercontent.com/61924776/141536924-de27ad87-38bc-4f3e-b63b-a3d65afa2ee8.png) ![image](https://user-images.githubusercontent.com/61924776/141537299-f0f115f1-2170-46d7-87b1-482e1dfe4bdb.png)
 
