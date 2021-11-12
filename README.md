@@ -1,12 +1,8 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+# Formula One Website
 
 Simple react app for f1 information.
 
-###Technologies
+## Available Scripts
 
 React (Framer-Motion, React-Query)
 SCSS
