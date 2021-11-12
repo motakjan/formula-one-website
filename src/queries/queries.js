@@ -14,7 +14,7 @@ export const getRoundResults = async (round, year) => {
 
 export const getNews = async () => {
   const response = await fetch(
-    "http://newsasdsdpi.org/v2/everything?domains=formula1.com&sortBy=popularity&apiKey=28cea466b3f5460fac29dc04ce75301d"
+    "http://newsapi.org/v2/everything?domains=formula1.com&sortBy=popularity&apiKey=28cea466b3f5460fac29dc04ce75301d"
   );
   const data = await response.json();
   return data;
