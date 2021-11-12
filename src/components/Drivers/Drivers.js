@@ -5,6 +5,8 @@ import { getDriverStandings } from "../../queries/queries";
 import { Title } from "../UI/Title/Title";
 import { Driver } from "./Driver/Driver";
 import "./Drivers.scss";
+import { Spinner } from "../UI/Spinner/Spinner";
+import { ErrorMessage } from "../UI/ErrorMessage/ErrorMessage";
 
 export const Drivers = () => {
   const { year } = useYear();
@@ -33,6 +35,10 @@ export const Drivers = () => {
               />
             )
           )}
+        {status === "loading" && <Spinner />}
+        {status === "error" && (
+          <ErrorMessage description="Error while loading placement data" />
+        )}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-$medium: 750px;
+@import "../../Variables";
 
 .navbar {
   z-index: 1000;
@@ -7,7 +7,7 @@ $medium: 750px;
   width: 100vw;
   padding: 16px 12px 14px 12px;
   align-items: center;
-  background: #ff1b16;
+  background: $redColor;
   //-webkit-box-shadow: 8px 0px 15px 3px rgb(0 0 0 / 12%);
   //box-shadow: 8px 0px 15px 3px rgb(0 0 0 / 12%);
 
@@ -119,7 +119,7 @@ $medium: 750px;
     .link {
       text-decoration: none;
       margin: 0px 16px;
-      color: #ededed;
+      color: $lightColor;
       font-weight: 400;
       font-size: 1.2rem;
       display: flex;
@@ -132,9 +132,9 @@ $medium: 750px;
       }
 
       &:hover {
-        color: #111111;
-        border-bottom-color: #111111;
-        border-right-color: #111111;
+        color: $darkColor;
+        border-bottom-color: $darkColor;
+        border-right-color: $darkColor;
       }
     }
 
@@ -160,8 +160,8 @@ $medium: 750px;
       align-items: center;
 
       .link {
-        border-bottom: 2px solid #ededed;
-        border-right: 2px solid #ededed;
+        border-bottom: 2px solid $lightColor;
+        border-right: 2px solid $lightColor;
         border-radius: 8px;
         padding: 5px;
         width: 85vw;

@@ -30,7 +30,7 @@ export const getFlagName = (data) => {
   return `${given}-${family}`;
 };
 
-export const getDriverImageName = (data, add = "") => {
+export const getDriverImageName = (data, add = "", year = "2021") => {
   let given = data.Driver.givenName
     .substr(0, 3)
     .toLowerCase()
@@ -46,7 +46,9 @@ export const getDriverImageName = (data, add = "") => {
     add = "02";
   }
 
-  if (data.Driver.familyName === "Latifi") {
+  console.log(family, year);
+
+  if (data.Driver.familyName === "Latifi" && year === 2021) {
     given = "nic";
     family = "laf";
   }

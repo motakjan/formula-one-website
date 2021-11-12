@@ -1,12 +1,13 @@
 import React from "react";
 import { getTeamColors } from "../../../queries/staticData";
 import { getFlagName, getDriverImageName } from "../../../queries/staticData";
+import { motion } from "framer-motion";
 
 const teamColors = getTeamColors();
 
 export const Driver = ({ driverData, year }) => {
   return (
-    <div className="driver-card">
+    <motion.div className="driver-card" whileHover={{}}>
       <div className="top-bar">
         <h2 className="position">{driverData.position}</h2>
         <h3 className="points">
@@ -39,6 +40,10 @@ export const Driver = ({ driverData, year }) => {
               : "https://www.formula1.com/content/dam/fom-website/flags/Poland.jpg.transform/2col/image.jpg"
           }
           alt={`${getFlagName(driverData)}-1-flag`}
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = "/blackbg.jpg";
+          }}
         />
       </div>
 
@@ -50,9 +55,14 @@ export const Driver = ({ driverData, year }) => {
               className="placement-driver-number-image"
               src={`https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/number-logos/${getDriverImageName(
                 driverData,
-                "01"
+                "01",
+                year
               ).toUpperCase()}.png.transform/2col/image.png`}
               alt={`${getDriverImageName(driverData, year)}-number-1`}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "/blackbg.jpg";
+              }}
             />
           </div>
 
@@ -60,12 +70,13 @@ export const Driver = ({ driverData, year }) => {
             className="placement-driver-image"
             src={`https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/${year}/${getDriverImageName(
               driverData,
-              "01"
+              "01",
+              year
             )}.png.transform/2col/image.png`}
             alt={`${getDriverImageName(driverData, year)}-1`}
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

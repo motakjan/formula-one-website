@@ -8,6 +8,8 @@ import { OrderedListOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useYear } from "../../../../store/YearContext";
+import { Spinner } from "../../../UI/Spinner/Spinner";
+import { ErrorMessage } from "../../../UI/ErrorMessage/ErrorMessage";
 
 const teamColors = getTeamColors();
 
@@ -76,6 +78,10 @@ export const Standings = () => {
             </Link>
           </motion.div>
         </>
+      )}
+      {status === "loading" && <Spinner />}
+      {status === "error" && (
+        <ErrorMessage description="Error while loading placement data" />
       )}
     </div>
   );

@@ -62,10 +62,10 @@ a {
 }
 
 .main-title-wrapper {
-  border-top: 6px solid;
-  border-left: 6px solid;
+  border-top: 8px solid;
+  border-left: 8px solid;
   padding-left: 2rem;
-  border-radius: 0.5rem;
+  border-top-left-radius: 1rem;
 
   .title {
     font-family: FormulaBlack;
