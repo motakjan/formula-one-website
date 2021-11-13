@@ -11,6 +11,8 @@ export const News = ({ className }) => {
     onError: (err) => console.error(err),
   });
 
+  console.log(data);
+
   return (
     <div className={`news-section ${className}`}>
       <Title title="News" subtitle="NEWS FROM THE RACING WORLD" />

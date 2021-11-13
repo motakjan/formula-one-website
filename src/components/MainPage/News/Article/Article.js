@@ -19,9 +19,9 @@ export const Article = ({ articleData }) => {
               className="article-image"
               alt="example"
               src={
-                articleData.image.contentUrl
+                articleData.image?.contentUrl
                   ? articleData.image.contentUrl
-                  : "/blackbg.jpg"
+                  : process.env.PUBLIC_URL + "/blackbg.jpg"
               }
             />
           </motion.div>
