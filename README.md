@@ -2,7 +2,7 @@
 
 Simple application to get information about current formula one stats. This web application allows the user to browse between schedule, rankings and round results from years between 2018 and 2021. 
 
-Feel free to visit the site at [https://vibrant-montalcini-137939.netlify.app/](https://vibrant-montalcini-137939.netlify.app/)
+Feel free to visit the site at [here](https://admiring-thompson-8f6896.netlify.app)
 
 ## Used Technologies
 
